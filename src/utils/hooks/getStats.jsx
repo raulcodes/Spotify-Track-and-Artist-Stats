@@ -21,7 +21,8 @@ const useGetStats = (type, time_range, token) => {
     return stats
 }
 
-const useGetAllStats = (token) => {
+const useGetAllStats = () => {
+    const token = window.sessionStorage.getItem('spotify_token')
     const short_tracks = useGetStats('tracks', 'short_term', token)
     const medium_tracks = useGetStats('tracks', 'medium_term', token)
     const long_tracks = useGetStats('tracks', 'long_term', token)

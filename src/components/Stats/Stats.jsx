@@ -7,7 +7,6 @@ import TrackList from '../TrackList/TrackList';
 import { typeOptions, timeOptions, limitOptions } from '../../utils/options.js'
 
 const Stats = () => {
-    const token = window.sessionStorage.getItem('spotify_token')
     const [items, setItems] = useState([])
     const [selectedLimitOption, setLimitOption] = useState({state: "limit", value: "10", label: 10})
     const [selectedTimeOption, setTimeOption] = useState({state: "time", value: "short", label: "4 weeks"})
@@ -24,7 +23,7 @@ const Stats = () => {
         short_artists,
         medium_artists,
         long_artists,
-    ] = useGetAllStats(token);
+    ] = useGetAllStats();
 
     const handleLimitChange = (selectedOption) => {
         setLimit(selectedOption.label)
