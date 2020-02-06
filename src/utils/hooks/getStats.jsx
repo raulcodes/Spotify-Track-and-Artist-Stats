@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const useGetState = (type, time_range, token) => {
     const [stats, setStats] = useState([])

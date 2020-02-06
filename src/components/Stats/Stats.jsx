@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { withAlert } from 'react-alert'
+// import { withAlert } from 'react-alert'
 import Select from 'react-select';
 
-import useGetStats from './utils/hooks/getStats.jsx'
-import ListItem from './Track'
+import useGetStats from '../../utils/hooks/getStats.jsx'
+import TrackItem from '../TrackList/TrackItem'
 
-import { typeOptions, timeOptions, limitOptions } from './utils/options.js'
+import { typeOptions, timeOptions, limitOptions } from '../../utils/options.js'
 
 const Stats = () => {
     const token = window.sessionStorage.getItem('spotify_token')
@@ -107,7 +107,7 @@ const Stats = () => {
                             placeholder="4 weeks" />
                 <ol>
                     {items.map((i, key) => 
-                        <ListItem k={key} item={i} />
+                        <TrackItem k={key} item={i} />
                     )}
                 </ol>
             </div> 

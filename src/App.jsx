@@ -2,11 +2,10 @@ import React from 'react';
 import { Provider as AlertProvider } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import './App.css';
 
-import Login from './Login.jsx'
-import Authorize from './Authorize.jsx'
-import Stats from './Stats.jsx'
+import Login from './components/Authorization/Login';
+import Authorize from './components/Authorization/Authorize';
+import Stats from './components/Stats/Stats';
 
 const App = () => {
   return (
