@@ -1,9 +1,8 @@
-import React, { useState, useEffect, Fragment } from 'react';
-// import { withAlert } from 'react-alert'
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-import useGetStats from '../../utils/hooks/getStats.jsx'
-import TrackItem from '../TrackList/TrackItem'
+import useGetAllStats from '../../utils/hooks/getStats'
+import TrackList from '../TrackList/TrackList';
 
 import { typeOptions, timeOptions, limitOptions } from '../../utils/options.js'
 
@@ -18,25 +17,24 @@ const Stats = () => {
     const [time, setTime] = useState('short')
     const [type, setType] = useState('tracks')
 
-    const short_tracks = useGetStats('tracks', 'short_term', token)
-    const medium_tracks = useGetStats('tracks', 'medium_term', token)
-    const long_tracks = useGetStats('tracks', 'long_term', token)
-    const short_artists = useGetStats('artists', 'short_term', token)
-    const medium_artists = useGetStats('artists', 'medium_term', token)
-    const long_artists = useGetStats('artists', 'long_term', token)
+    const [
+        short_tracks,
+        medium_tracks,
+        long_tracks,
+        short_artists,
+        medium_artists,
+        long_artists,
+    ] = useGetAllStats(token);
 
     const handleLimitChange = (selectedOption) => {
-        console.log(selectedOption)
         setLimit(selectedOption.label)
         setLimitOption(selectedOption)
     }
     const handleTypeChange = (selectedOption) => {
-        console.log(selectedOption)
         setType(selectedOption.value)
         setTypeOption(selectedOption)
     }
     const handleTimeChange = (selectedOption) => {
-        console.log(selectedOption)
         setTime(selectedOption.value)
         setTimeOption(selectedOption)
     }
@@ -89,7 +87,7 @@ const Stats = () => {
     }, [limit, time, type])
 
     return(
-        <Fragment>
+        <>
             <div>
                 <p>Your top</p>
                     <Select value={selectedLimitOption}
@@ -105,13 +103,9 @@ const Stats = () => {
                             onChange={handleTimeChange}
                             options={timeOptions}
                             placeholder="4 weeks" />
-                <ol>
-                    {items.map((i, key) => 
-                        <TrackItem k={key} item={i} />
-                    )}
-                </ol>
+                <TrackList items={items} />
             </div> 
-        </Fragment>
+        </>
     );
 }
 
