@@ -7,30 +7,30 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 
 const TrackItem = ({ k, item }) => {
-    const { type, album, name, artists } = item;
-    return (
-        <>
-            <ListItem id={k}>
-                    {
-                        (type === 'track') ?
-                        <>
-                            <ListItemAvatar>
-                                <Avatar variant="rounded" src={album.images[0].url} alt={name} />
-                            </ListItemAvatar>        
-                            <ListItemText primary={name} secondary={artists[0].name} />
-                        </>
-                        :
-                        <>
-                            <ListItemAvatar>
-                                <Avatar variant="rounded" src={item.images[0].url} alt={name} />
-                            </ListItemAvatar>
-                            <ListItemText primary={name} />
-                        </>
-                    }
-            </ListItem>
-            <Divider />
-        </>
-    )
+  const { type, album, name, artists } = item;
+  return (
+    <>
+      <ListItem id={k}>
+        {
+          (type === 'track') ?
+          <>
+            <ListItemAvatar>
+              <Avatar variant="rounded" src={album.images[0].url} alt={name} />
+            </ListItemAvatar>        
+            <ListItemText primary={name} secondary={artists[0].name} />
+          </>
+          :
+          <>
+            <ListItemAvatar>
+              <Avatar variant="rounded" src={item.images[0].url} alt={name} />
+            </ListItemAvatar>
+            <ListItemText primary={name} />
+          </>
+        }
+      </ListItem>
+      <Divider />
+    </>
+  )
 }
 
 export default TrackItem;
