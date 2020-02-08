@@ -4,7 +4,7 @@ import Select from 'react-select';
 import { limitOptions } from '../../utils/options';
 
 const LimitSelector = ({ setLimit }) => {
-  const [selectedLimitOption, setLimitOption] = React.useState(limitOptions[0])
+  const [selectedLimitOption, setLimitOption] = React.useState(limitOptions[2])
 
   const handleLimitChange = (selectedOption) => {
     setLimit(selectedOption.label)

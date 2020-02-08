@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router'
 
 const Authorize = () => {
@@ -14,16 +14,12 @@ const Authorize = () => {
     const accessToken = getHashValue('access_token')
     if ((expected_state === getHashValue('state')) && accessToken) {
       router.replace({ pathname: '/stats', query: { accessToken: accessToken }});
-      // window.sessionStorage.setItem('spotify_token', getHashValue('access_token'))
-      // history.push({
-      //   pathname: '/stats'
-      // })
+    } else {
+      router.push('/');
     }
   }, [])
 
-  return (
-    <h1>this is my location:</h1>
-  )
+  return null;
 }
 
 export default Authorize

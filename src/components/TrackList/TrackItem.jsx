@@ -11,15 +11,22 @@ const TrackItem = ({ k, item }) => {
     return (
         <>
             <ListItem id={k}>
-                <ListItemAvatar>
                     {
                         (type === 'track') ?
-                        <Avatar variant="rounded" src={album.images[0].url} alt={name} />
+                        <>
+                            <ListItemAvatar>
+                                <Avatar variant="rounded" src={album.images[0].url} alt={name} />
+                            </ListItemAvatar>        
+                            <ListItemText primary={name} secondary={artists[0].name} />
+                        </>
                         :
-                        <Avatar variant="rounded" src={item.images[0].url} alt={name} />
+                        <>
+                            <ListItemAvatar>
+                                <Avatar variant="rounded" src={item.images[0].url} alt={name} />
+                            </ListItemAvatar>
+                            <ListItemText primary={name} />
+                        </>
                     }
-                </ListItemAvatar>
-                <ListItemText primary={name} secondary={artists[0].name} />
             </ListItem>
             <Divider />
         </>
