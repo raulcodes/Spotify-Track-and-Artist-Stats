@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-import useGetAllStats from '../../utils/hooks/getStats'
-import TrackList from '../TrackList/TrackList';
-import Selection from '../Selection/Selection';
+import useGetAllStats from '../../src/utils/hooks/getStats';
+import TrackList from '../../src/components/TrackList/TrackList';
+import Selection from '../../src/components/Selection/Selection';
 
-const Stats = () => {
+const Stats = ({ accessToken }) => {
     const [items, setItems] = useState([])
 
     const [limit, setLimit] = useState(10)
@@ -18,7 +18,7 @@ const Stats = () => {
         short_artists,
         medium_artists,
         long_artists,
-    ] = useGetAllStats();
+    ] = useGetAllStats(accessToken);
 
     useEffect(() => {
         let items = []
@@ -80,5 +80,7 @@ const Stats = () => {
         </>
     );
 }
+
+Stats.getInitialProps = async ({ query }) => ({ accessToken: query.accessToken }); 
 
 export default Stats
