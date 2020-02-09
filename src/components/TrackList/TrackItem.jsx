@@ -18,7 +18,7 @@ const TrackItem = ({ k, item }) => {
           (type === 'track') ?
           <>
             <ListItemAvatar>
-              <Avatar variant="rounded" src={album.images[0].url} alt={name} />
+              <Avatar className={classes.avatar} variant="rounded" src={album.images[0].url} alt={name} />
             </ListItemAvatar>        
             <ListItemText className={classes.track} primary={name} secondary={artists[0].name} />
           </>
@@ -31,7 +31,7 @@ const TrackItem = ({ k, item }) => {
           </>
         }
       </ListItem>
-      <Divider />
+      <Divider className={classes.divider} />
     </>
   )
 }
