@@ -25,7 +25,7 @@ const TrackItem = ({ k, item }) => {
           :
           <>
             <ListItemAvatar>
-              <Avatar variant="rounded" src={item.images[0].url} alt={name} />
+              <Avatar className={classes.avatar} src={item.images[0].url} alt={name} />
             </ListItemAvatar>
             <ListItemText primary={name} className={classes.track} />
           </>
