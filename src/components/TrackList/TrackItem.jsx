@@ -1,5 +1,6 @@
 import React from 'react';
 
+import useStyles from './track_styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -7,6 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 
 const TrackItem = ({ k, item }) => {
+  const classes = useStyles({});
   const { type, album, name, artists } = item;
   return (
     <>
@@ -17,14 +19,14 @@ const TrackItem = ({ k, item }) => {
             <ListItemAvatar>
               <Avatar variant="rounded" src={album.images[0].url} alt={name} />
             </ListItemAvatar>        
-            <ListItemText primary={name} secondary={artists[0].name} />
+            <ListItemText primary={name} secondary={artists[0].name} className={classes.track} />
           </>
           :
           <>
             <ListItemAvatar>
               <Avatar variant="rounded" src={item.images[0].url} alt={name} />
             </ListItemAvatar>
-            <ListItemText primary={name} />
+            <ListItemText primary={name} className={classes.track} />
           </>
         }
       </ListItem>

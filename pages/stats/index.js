@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 
+import Stats from '../../src/components/Stats/Stats';
 import useGetAllStats from '../../src/utils/hooks/getStats';
-import TrackList from '../../src/components/TrackList/TrackList';
-import Selection from '../../src/components/Selection/Selection';
 
-const Stats = ({ accessToken }) => {
+const StatsIndex = ({ accessToken }) => {
   const router = useRouter();
   useEffect(() => {
     if (!accessToken) {
@@ -75,19 +74,15 @@ const Stats = ({ accessToken }) => {
   }, [limit, time, type]);
 
   return(
-    <>
-      <div>
-        <Selection
-          setLimit={setLimit}
-          setTime={setTime}
-          setType={setType}
-        />
-        <TrackList items={items} />
-      </div> 
-    </>
+    <Stats
+      setLimit={setLimit}
+      setTime={setTime}
+      setType={setType}
+      items={items}
+    />
   );
 }
 
-Stats.getInitialProps = async ({ query }) => ({ accessToken: query.accessToken }); 
+StatsIndex.getInitialProps = async ({ query }) => ({ accessToken: query.accessToken }); 
 
-export default Stats
+export default StatsIndex;

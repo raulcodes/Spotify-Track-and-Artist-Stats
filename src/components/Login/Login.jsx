@@ -18,6 +18,9 @@ const Login = () => {
           <Typography variant="h3" className={classes.title}>
             Spotify Stats
           </Typography>
+          <Typography variant="body1" className={classes.bodyText}>
+            Discover what your Top listened to tracks and artists are and turn them into playlists!
+          </Typography>
         </CardContent>
         <CardActions className={classes.cardAction}>
           <Button className={classes.button} variant="outlined" href={auth_url}>Log In to Spotify</Button>

@@ -20,6 +20,13 @@ const useStyles = makeStyles({
     fontStyle: 'normal',
     fontWeight: 400,
   },
+  bodyText: {
+    color: '#FFF4E8',
+    fontFamily: 'lust-display',
+    fontStyle: 'italic',
+    fontWeight: 400,
+    paddingTop: '24px',
+  },
   cardAction: {
     display: 'flex',
     justifyContent: 'center',
@@ -27,7 +34,8 @@ const useStyles = makeStyles({
   button: {
     color: '#FFF4E8',
     borderColor: '#FFF4E8',
-    fontFamily: 'lust-script-display',
+    fontFamily: 'lust-display',
+    fontStyle: 'italic',
     textTransform: 'none',
   },
 });
