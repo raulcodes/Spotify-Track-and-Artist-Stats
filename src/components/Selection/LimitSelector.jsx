@@ -1,23 +1,25 @@
 import React from 'react';
-import Select from 'react-select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
-import { limitOptions } from '../../utils/options';
-
-const LimitSelector = ({ setLimit }) => {
-  const [selectedLimitOption, setLimitOption] = React.useState(limitOptions[2])
-
-  const handleLimitChange = (selectedOption) => {
-    setLimit(selectedOption.label)
-    setLimitOption(selectedOption)
+const LimitSelector = ({ limit, setLimit }) => {
+  const handleLimitChange = (e) => {
+    setLimit(e.target.value)
   };
 
   return(
     <Select 
-      value={selectedLimitOption}
+      value={limit}
       onChange={handleLimitChange}
-      options={limitOptions}
-      placeholder='10' 
-    />
+    >
+      <MenuItem value={1}>1</MenuItem>
+      <MenuItem value={5}>5</MenuItem>
+      <MenuItem value={10}>10</MenuItem>
+      <MenuItem value={20}>20</MenuItem>
+      <MenuItem value={30}>30</MenuItem>
+      <MenuItem value={40}>40</MenuItem>
+      <MenuItem value={50}>50</MenuItem>
+    </Select>
   );
 };
 

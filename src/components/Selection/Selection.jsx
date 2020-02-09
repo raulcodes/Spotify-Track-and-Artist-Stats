@@ -1,21 +1,29 @@
 import React from 'react';
+import Card from '@material-ui/core/Card';
 
 import useStyles from './selection_styles';
 import LimitSelector from '../Selection/LimitSelector';
 import TypeSelector from '../Selection/TypeSelector';
 import TimeSelector from '../Selection/TimeSelector';
 
-const Selection = ({ setLimit, setType, setTime }) => {
+const Selection = ({ 
+  limit, 
+  time, 
+  type,
+  setLimit, 
+  setTime, 
+  setType, 
+}) => {
   const classes = useStyles({});
 
   return(
-    <div>
+    <Card className={classes.selectCard}>
       <p className={classes.text}>Your top</p>
-        <LimitSelector setLimit={setLimit} />
-        <TypeSelector setType={setType} />
+        <LimitSelector limit={limit} setLimit={setLimit} />
+        <TypeSelector type={type} setType={setType} />
       <p className={classes.text}>for the past</p>
-        <TimeSelector setTime={setTime} />
-    </div>
+        <TimeSelector time={time} setTime={setTime} />
+    </Card>
   );
 };
 

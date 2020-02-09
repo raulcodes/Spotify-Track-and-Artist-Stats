@@ -11,7 +11,6 @@ const useGetStats = (type, time_range, token) => {
         })
         .then(response => response.json())
         .then(resp => {
-            console.log(resp.items)
             setStats(resp.items)
         })
     }

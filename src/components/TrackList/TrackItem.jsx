@@ -13,13 +13,14 @@ const TrackItem = ({ k, item }) => {
   return (
     <>
       <ListItem id={k}>
+        <ListItemText className={classes.number}>{(k < 9) ? `0${k+1}` : `${k+1}`}</ListItemText>
         {
           (type === 'track') ?
           <>
             <ListItemAvatar>
               <Avatar variant="rounded" src={album.images[0].url} alt={name} />
             </ListItemAvatar>        
-            <ListItemText primary={name} secondary={artists[0].name} className={classes.track} />
+            <ListItemText className={classes.track} primary={name} secondary={artists[0].name} />
           </>
           :
           <>

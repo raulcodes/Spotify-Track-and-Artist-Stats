@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
   container: {
@@ -7,7 +8,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   card: {
-    backgroundColor: '#2B2B2B',
+    backgroundColor: colors.white,
     padding: '50px',
     width: '50%',
   },
@@ -15,13 +16,13 @@ const useStyles = makeStyles({
     paddingLeft: '48px',
   },
   title: {
-    color: '#FFF4E8',
+    color: colors.black,
     fontFamily: 'lust-script-display',
     fontStyle: 'normal',
     fontWeight: 400,
   },
   bodyText: {
-    color: '#FFF4E8',
+    color: colors.black,
     fontFamily: 'lust-display',
     fontStyle: 'italic',
     fontWeight: 400,
@@ -32,8 +33,8 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   button: {
-    color: '#FFF4E8',
-    borderColor: '#FFF4E8',
+    color: colors.black,
+    borderColor: colors.black,
     fontFamily: 'lust-display',
     fontStyle: 'italic',
     textTransform: 'none',

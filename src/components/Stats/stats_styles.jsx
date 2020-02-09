@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
   container: {
@@ -7,7 +8,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   card: {
-    backgroundColor: '#2B2B2B',
+    backgroundColor: colors.white,
     padding: '50px',
     width: '50%',
   },

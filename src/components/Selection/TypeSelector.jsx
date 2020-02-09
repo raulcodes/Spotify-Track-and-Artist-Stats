@@ -1,23 +1,20 @@
 import React from 'react';
-import Select from 'react-select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
-import { typeOptions } from '../../utils/options';
-
-const TypeSelector = ({ setType }) => {
-  const [selectedTypeOption, setTypeOption] = React.useState(typeOptions[0]);
-
-  const handleTypeChange = (selectedOption) => {
-    setType(selectedOption.value)
-    setTypeOption(selectedOption)
+const TypeSelector = ({ type, setType }) => {
+  const handleTypeChange = (e) => {
+    setType(e.target.value)
   };
 
   return(
     <Select 
-      value={selectedTypeOption}
+      value={type}
       onChange={handleTypeChange}
-      options={typeOptions}
-      placeholder='tracks' 
-    />
+    >
+      <MenuItem value="tracks">tracks</MenuItem>
+      <MenuItem value="artists">artists</MenuItem>
+    </Select>
   );
 };
 

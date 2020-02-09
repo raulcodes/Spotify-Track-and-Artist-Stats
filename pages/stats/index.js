@@ -75,6 +75,9 @@ const StatsIndex = ({ accessToken }) => {
 
   return(
     <Stats
+      limit={limit}
+      time={time}
+      type={type}
       setLimit={setLimit}
       setTime={setTime}
       setType={setType}

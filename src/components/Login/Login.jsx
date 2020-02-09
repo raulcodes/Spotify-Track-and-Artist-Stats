@@ -13,7 +13,7 @@ const Login = () => {
 
   return(
     <Container className={classes.container}>
-      <Card className={classes.card}>
+      <Card elevation={0} className={classes.card}>
         <CardContent className={classes.cardContent}>
           <Typography variant="h3" className={classes.title}>
             Spotify Stats

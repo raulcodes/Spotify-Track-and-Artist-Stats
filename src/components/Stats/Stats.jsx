@@ -7,6 +7,9 @@ import TrackList from '../TrackList/TrackList';
 import Selection from '../Selection/Selection';
 
 const Stats = ({
+  limit,
+  time,
+  type,
   setLimit,
   setTime,
   setType,
@@ -15,8 +18,11 @@ const Stats = ({
   const classes = useStyles({});
   return(
     <Container className={classes.container}>
-      <Card className={classes.card}>
+      <Card elevation={0} className={classes.card}>
         <Selection
+          limit={limit}
+          time={time}
+          type={type}
           setLimit={setLimit}
           setTime={setTime}
           setType={setType}

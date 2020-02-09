@@ -1,24 +1,23 @@
 import React from 'react';
-import Select from 'react-select';
+// import Select from 'react-select';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
-import { timeOptions } from '../../utils/options';
-
-const TypeSelector = ({ setTime }) => {
-  const [selectedTimeOption, setTimeOption] = React.useState(timeOptions[0]);
-
-  const handleTimeChange = (selectedOption) => {
-    setTime(selectedOption.value)
-    setTimeOption(selectedOption)
+const TimeSelector = ({ time, setTime }) => {
+  const handleTimeChange = (e) => {
+    setTime(e.target.value)
   };
 
   return(
     <Select 
-      value={selectedTimeOption}
+      value={time}
       onChange={handleTimeChange}
-      options={timeOptions}
-      placeholder="4 weeks" 
-    />
+    >
+      <MenuItem value="short">4 weeks</MenuItem>
+      <MenuItem value="medium">6 months</MenuItem>
+      <MenuItem value="long">couple of years</MenuItem>
+    </Select>
   );
 };
 
-export default TypeSelector;
+export default TimeSelector;
