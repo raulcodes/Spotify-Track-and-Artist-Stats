@@ -17,7 +17,7 @@ const Selection = ({
   const classes = useStyles({});
 
   return(
-    <Card className={classes.selectCard}>
+    <Card elevation={0} className={classes.selectCard}>
       <p className={classes.text}>Your top</p>
         <LimitSelector limit={limit} setLimit={setLimit} />
         <TypeSelector type={type} setType={setType} />

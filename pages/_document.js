@@ -1,9 +1,8 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
 
-const theme = responsiveFontSizes(createMuiTheme())
+import theme from '../src/utils/theme';
 
 class MyDocument extends Document {
   render() {
@@ -16,29 +15,7 @@ class MyDocument extends Document {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link
-            rel="stylesheet"
-            href="https://use.typekit.net/saw2rwz.css"
-          />
-          <style jsx global>
-            {`
-              html,
-              body {
-                height: 100%;
-                width: 100%;
-              }
-              *,
-              *:after,
-              *:before {
-                box-sizing: border-box;
-              }
-              body {
-                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-                font-size: 1rem;
-                margin: 0;
-              }
-            `}
-          </style>
+          <link rel="stylesheet" href="https://use.typekit.net/saw2rwz.css" />
         </Head>
         <body>
           <Main />

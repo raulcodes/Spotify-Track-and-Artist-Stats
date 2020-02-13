@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   card: {
-    backgroundColor: colors.white,
+    // backgroundColor: colors.white,
     padding: '50px',
     width: '50%',
   },
@@ -16,13 +16,13 @@ const useStyles = makeStyles({
     paddingLeft: '48px',
   },
   title: {
-    color: colors.black,
+    // color: colors.black,
     fontFamily: 'lust-script-display',
     fontStyle: 'normal',
     fontWeight: 400,
   },
   bodyText: {
-    color: colors.black,
+    // color: colors.black,
     fontFamily: 'lust-display',
     fontStyle: 'italic',
     fontWeight: 400,
@@ -33,8 +33,8 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   button: {
-    color: colors.black,
-    borderColor: colors.black,
+    // color: colors.black,
+    // borderColor: colors.black,
     fontFamily: 'lust-display',
     fontStyle: 'italic',
     textTransform: 'none',
