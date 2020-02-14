@@ -1,14 +1,18 @@
 import React from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import useStyles from './selection_styles';
 
 const TimeSelector = ({ time, setTime }) => {
+  const classes = useStyles({});
   const handleTimeChange = (e) => {
     setTime(e.target.value)
   };
 
   return(
     <Select 
+      className={classes.select}
+      variant="outlined"
       value={time}
       onChange={handleTimeChange}
     >

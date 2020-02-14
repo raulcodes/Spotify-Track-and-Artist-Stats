@@ -18,11 +18,16 @@ const Selection = ({
 
   return(
     <Card elevation={0} className={classes.selectCard}>
-      <p className={classes.text}>Your top</p>
+      <h1>Howdy!</h1>
+      <div className={classes.selectors}>
+        <h2>Here are your top</h2>
         <LimitSelector limit={limit} setLimit={setLimit} />
         <TypeSelector type={type} setType={setType} />
-      <p className={classes.text}>for the past</p>
+      </div>
+      <div className={classes.selectors}>
+        <h2>for the past</h2>
         <TimeSelector time={time} setTime={setTime} />
+      </div>
     </Card>
   );
 };

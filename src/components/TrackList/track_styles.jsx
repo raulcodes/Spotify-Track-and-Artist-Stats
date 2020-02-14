@@ -9,11 +9,12 @@ const useStyles = makeStyles({
     maxWidth: '100px'
   },
   avatar: {
-    width: '85px',
-    height: '85px',
+    width: 100,
+    height: 100,
     marginRight: '20px',
     marginTop: '30px',
     marginBottom: '30px',
+    boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
   }
 });
 

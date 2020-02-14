@@ -23,7 +23,7 @@ const TrackItem = ({ k, item }) => {
             <ListItemAvatar>
               <Avatar className={classes.avatar} variant="rounded" src={album.images[0].url} alt={name} />
             </ListItemAvatar>        
-            <ListItemText variant="h4" primary={name} secondary={artists[0].name} />
+            <ListItemText variant="h4" primary={`${name.slice(0,30)}${name.length > 30 ? '...' : ''}`} secondary={artists[0].name} />
           </>
           :
           <>
