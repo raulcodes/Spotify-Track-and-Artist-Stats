@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   card: {
-    width: '50%',
+    // width: '50%',
   },
 });
 

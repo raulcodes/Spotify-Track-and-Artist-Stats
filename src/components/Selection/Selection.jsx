@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
 
 import useStyles from './selection_styles';
 import LimitSelector from '../Selection/LimitSelector';
@@ -13,19 +14,22 @@ const Selection = ({
   setLimit, 
   setTime, 
   setType, 
+  userName,
 }) => {
   const classes = useStyles({});
 
   return(
     <Card elevation={0} className={classes.selectCard}>
-      <h1>Howdy!</h1>
+      <Typography variant="h4">
+        Hello, {userName.split(' ')[0]}!
+      </Typography>
+      <h3>Here are your top</h3>
       <div className={classes.selectors}>
-        <h2>Here are your top</h2>
         <LimitSelector limit={limit} setLimit={setLimit} />
         <TypeSelector type={type} setType={setType} />
       </div>
+      <h3>for the past</h3>
       <div className={classes.selectors}>
-        <h2>for the past</h2>
         <TimeSelector time={time} setTime={setTime} />
       </div>
     </Card>

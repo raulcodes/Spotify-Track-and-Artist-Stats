@@ -21,6 +21,7 @@ const StatsIndex = ({ accessToken }) => {
     short_artists,
     medium_artists,
     long_artists,
+    userName,
   ] = useGetAllStats(accessToken);
   
   useEffect(() => {
@@ -85,6 +86,7 @@ const StatsIndex = ({ accessToken }) => {
       setTime={setTime}
       setType={setType}
       items={items}
+      userName={userName}
     />
   );
 }
