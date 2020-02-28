@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import useStyles from './stats_styles';
 import TrackList from '../TrackList/TrackList';
 import Selection from '../Selection/Selection';
+import RecordIcon from '../../utils/RecordIcon';
 
 const Stats = ({
   limit,
@@ -19,6 +20,7 @@ const Stats = ({
   const classes = useStyles({});
   return(
     <Container className={classes.container}>
+      <RecordIcon className={classes.icon} />
       <Card elevation={0} className={classes.card}>
         <Selection
           limit={limit}

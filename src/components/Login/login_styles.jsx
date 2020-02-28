@@ -31,12 +31,11 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     position: 'fixed',
-    bottom: '-40vh',
-    minHeight: '80vh',
-    maxWidth: '650px',
-    '-webkit-animation': '$rotation 4s infinite linear',
-    '-moz-animation': '$rotation 4s linear infinite',
-    'animation': '$rotation 4s linear infinite',
+    bottom: '-21vh',
+    maxWidth: '350px',
+    '-webkit-animation': '$rotation 7s infinite linear',
+    '-moz-animation': '$rotation 7s linear infinite',
+    'animation': '$rotation 7s linear infinite',
   },
   '@-moz-keyframes rotation': { 
     '100%': { 
