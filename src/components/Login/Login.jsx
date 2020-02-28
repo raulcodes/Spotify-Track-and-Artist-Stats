@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Container from '@material-ui/core/Container';
+import RecordIcon from '../../utils/RecordIcon';
 import Typography from '@material-ui/core/Typography';
 import useStyles from './login_styles';
 
@@ -12,9 +13,10 @@ const Login = () => {
   const classes = useStyles({});
 
   return(
+    <>
     <Container className={classes.container}>
       <Card elevation={0} className={classes.card}>
-        <CardContent className={classes.cardContent}>
+        <CardContent>
           <Typography variant="h3" className={classes.title}>
             Spotify Stats
           </Typography>
@@ -23,10 +25,12 @@ const Login = () => {
           </Typography>
         </CardContent>
         <CardActions className={classes.cardAction}>
-          <Button className={classes.button} variant="outlined" href={auth_url}>Log In to Spotify</Button>
+          <Button variant="outlined" color="secondary" href={auth_url}>Log In to Spotify</Button>
         </CardActions>
       </Card>
+    <RecordIcon className={classes.icon} />
     </Container>
+    </>
   );
 };
 

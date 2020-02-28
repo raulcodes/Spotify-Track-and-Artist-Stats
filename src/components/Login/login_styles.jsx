@@ -1,28 +1,23 @@
 import { makeStyles } from '@material-ui/core/styles';
-import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
   container: {
-    paddingTop: '100px',
+    paddingTop: '175px',
     display: 'flex',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   card: {
-    // backgroundColor: colors.white,
-    padding: '50px',
-    width: '50%',
-  },
-  cardContent: {
-    paddingLeft: '48px',
+    padding: '20px',
+    maxWidth: '500px',
   },
   title: {
-    // color: colors.black,
     fontFamily: 'lust-script-display',
     fontStyle: 'normal',
+
     fontWeight: 400,
   },
   bodyText: {
-    // color: colors.black,
     fontFamily: 'lust-display',
     fontStyle: 'italic',
     fontWeight: 400,
@@ -32,13 +27,33 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
   },
-  button: {
-    // color: colors.black,
-    // borderColor: colors.black,
-    fontFamily: 'lust-display',
-    fontStyle: 'italic',
-    textTransform: 'none',
+  icon: {
+    display: 'flex',
+    justifyContent: 'center',
+    position: 'fixed',
+    bottom: '-40vh',
+    minHeight: '80vh',
+    maxWidth: '650px',
+    '-webkit-animation': '$rotation 4s infinite linear',
+    '-moz-animation': '$rotation 4s linear infinite',
+    'animation': '$rotation 4s linear infinite',
   },
+  '@-moz-keyframes rotation': { 
+    '100%': { 
+      '-moz-transform': 'rotate(360deg)', 
+    } 
+  },
+  '@-webkit-keyframes rotation': { 
+    '100%': { 
+      '-webkit-transform': 'rotate(360deg)'
+    } 
+  },
+  '@keyframes rotation': { 
+    '100%': { 
+      '-webkit-transform': 'rotate(360deg)', 
+      'transform': 'rotate(360deg)' 
+    } 
+  }
 });
 
 export default useStyles;

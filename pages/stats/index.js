@@ -25,6 +25,9 @@ const StatsIndex = ({ accessToken }) => {
   
   useEffect(() => {
     let items = []
+    if (!short_tracks) {
+      router.push('/');
+    } 
     short_tracks.slice(0, 10).map((track) =>
     items.push(track)
     )

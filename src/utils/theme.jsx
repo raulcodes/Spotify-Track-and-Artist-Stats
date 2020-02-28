@@ -1,20 +1,25 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
+const colors = {
+  BLACK: '#2B2B2B',
+  WHITE: '#FFF4E8',
+}
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FFF4E8',
+      main: colors.WHITE,
     },
     secondary: {
-      main: '#2B2B2B',
+      main: colors.BLACK,
     },
     background: {
-      paper: '#FFF4E8',
-      default: '#FFF4E8',
+      paper: colors.White,
+      default: colors.White,
     },
     common: {
-      black: '#2B2B2B',
-      white: 'FFF4E8',
+      black: colors.BLACK,
+      white: colors.White,
     }
   },
   typography: {
@@ -28,7 +33,20 @@ const theme = createMuiTheme({
       body1: {
         fontFamily: 'lust-script-display'
       }
-    }
+    },
+    MuiButton: {
+      outlinedSecondary: {
+        borderColor: colors.BLACK,
+        fontFamily: 'lust-display',
+        fontStyle: 'italic',
+        textTransform: 'none',
+        borderWidth: '1.5px',
+      },
+      label: {
+        paddingLeft: '24px',
+        paddingRight: '24px'
+      },
+    },
   }
 });
 
