@@ -14,10 +14,10 @@ const useStyles = makeStyles({
     display: 'flex',
   },
   select: {
-    fontSize: '24px',
-    marginLeft: '20px',
-    marginTop: '10px',
-    marginBottom: '10px',
+    fontSize: '1.17em',
+    marginRight: '5px',
+    marginTop: '0px',
+    marginBottom: '0px',
   },
 });
 

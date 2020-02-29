@@ -14,16 +14,20 @@ const TrackItem = ({ k, item }) => {
   return (
     <>
       <ListItem id={k}>
-        <ListItemText className={classes.number}>
-          <Typography variant="h3">{(k < 9) ? `0${k+1}` : `${k+1}`}</Typography>
-        </ListItemText>
+        <ListItemAvatar className={classes.number}>
+          <Typography variant="h4">{(k < 9) ? `0${k+1}` : `${k+1}`}</Typography>
+        </ListItemAvatar>
         {
           (type === 'track') ?
           <>
             <ListItemAvatar>
-              <Avatar className={classes.avatar} variant="rounded" src={album.images[0].url} alt={name} />
+              <Avatar className={classes.avatar} variant="square" src={album.images[0].url} alt={name} />
             </ListItemAvatar>        
-            <ListItemText variant="h4" primary={`${name.slice(0,30)}${name.length > 30 ? '...' : ''}`} secondary={artists[0].name} />
+            <ListItemText 
+              primary={`${name.slice(0,35)}${name.length > 35 ? '...' : ''}`} 
+              primaryTypographyProps={{ variant: 'body2' }}
+              secondary={artists[0].name} 
+            />
           </>
           :
           <>

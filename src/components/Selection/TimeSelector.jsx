@@ -12,7 +12,7 @@ const TimeSelector = ({ time, setTime }) => {
   return(
     <Select 
       className={classes.select}
-      variant="outlined"
+      variant="filled"
       value={time}
       onChange={handleTimeChange}
     >

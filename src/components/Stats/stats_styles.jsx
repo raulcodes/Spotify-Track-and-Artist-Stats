@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   icon: {
-    position: 'fixed',
+    position: 'absolute',
     top: '-15vh',
     maxWidth: '250px',
     '-webkit-animation': '$rotation 9s infinite linear',

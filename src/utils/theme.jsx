@@ -32,6 +32,9 @@ const theme = createMuiTheme({
     MuiTypography: {
       body1: {
         fontFamily: 'lust-script-display'
+      },
+      body2: {
+        fontFamily: 'lust-display',
       }
     },
     MuiButton: {

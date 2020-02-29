@@ -12,7 +12,6 @@ const LimitSelector = ({ limit, setLimit }) => {
   return(
     <Select 
       className={classes.select}
-      variant="outlined"
       value={limit}
       onChange={handleLimitChange}
     >

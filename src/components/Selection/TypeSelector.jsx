@@ -12,7 +12,6 @@ const TypeSelector = ({ type, setType }) => {
   return(
     <Select 
       className={classes.select}
-      variant="outlined"
       value={type}
       onChange={handleTypeChange}
     >
