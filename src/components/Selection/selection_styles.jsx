@@ -1,24 +1,26 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-  text: {    
-    fontFamily: 'lust-display',
-    fontStyle: 'italic',
-    textAlign: 'center',
-  },
   selectCard: {
-    padding: '24px',
+    paddingTop: '24px',
   },
   selectors: {
+    fontFamily: 'lust-display',
     textAlign: 'center',
     display: 'flex',
+    paddingTop: '5px',
+    paddingBottom: '5px',
   },
   select: {
-    fontSize: '1.17em',
+    fontFamily: 'lust-display',
+    fontSize: '1em',
     marginRight: '5px',
     marginTop: '0px',
     marginBottom: '0px',
   },
+  selectionPrompt: {
+    paddingTop: '24px'
+  }
 });
 
 export default useStyles;

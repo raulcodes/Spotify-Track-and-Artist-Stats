@@ -23,14 +23,16 @@ const Selection = ({
       <Typography variant="h4">
         Hello, {userName.split(' ')[0]}!
       </Typography>
-      <h3>Here are your top</h3>
-      <div className={classes.selectors}>
-        <LimitSelector limit={limit} setLimit={setLimit} />
-        <TypeSelector type={type} setType={setType} />
-      </div>
-      <h3>for the past</h3>
-      <div className={classes.selectors}>
-        <TimeSelector time={time} setTime={setTime} />
+      <div className={classes.selectionPrompt}>
+        <Typography variant="body2">Here are your top</Typography>
+        <div className={classes.selectors}>
+          <LimitSelector limit={limit} setLimit={setLimit} />
+          <TypeSelector type={type} setType={setType} />
+        </div>
+        <Typography variant="body2">for the past</Typography>
+        <div className={classes.selectors}>
+          <TimeSelector time={time} setTime={setTime} />
+        </div>
       </div>
     </Card>
   );
