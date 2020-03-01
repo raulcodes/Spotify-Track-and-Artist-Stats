@@ -3,7 +3,7 @@ const authURL = (darkMode) => {
   const code = darkMode ? '246' : '124';
   const params = {
     'client_id': 'e2273df8d7f94ae3b5cd7d865251dea3',
-    'redirect_uri': 'http://localhost:3000/callback',
+    'redirect_uri': 'https://spotify-track-and-artist-stats.now.sh/callback',
     'response_type': 'token',
     'state': code,
   };
