@@ -7,7 +7,7 @@ import RecordIcon from '../../utils/RecordIcon';
 import Typography from '@material-ui/core/Typography';
 import useStyles from './login_styles';
 
-const auth_url = 'https://accounts.spotify.com/authorize?client_id=e2273df8d7f94ae3b5cd7d865251dea3&redirect_uri=http:%2F%2Flocalhost:3000%2Fcallback&response_type=token&state=125'
+const auth_url = 'https://accounts.spotify.com/authorize?client_id=e2273df8d7f94ae3b5cd7d865251dea3&redirect_uri=https:%2F%2Fspotify-track-and-artist-stats.now.sh%2Fcallback&response_type=token&state=125'
 
 const Login = () => {
   const classes = useStyles({});
