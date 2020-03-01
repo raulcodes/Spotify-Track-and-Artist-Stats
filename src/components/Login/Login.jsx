@@ -24,8 +24,10 @@ const Login = () => {
         <div className={classes.cardAction}>
           <Button variant="outlined" color="secondary" href={auth_url}>Log In to Spotify</Button>
         </div>
+        <div className={classes.iconContainer}>
+          <RecordIcon className={classes.icon} />
+        </div>
       </div>
-      <RecordIcon className={classes.icon} />
     </Container>
     </>
   );

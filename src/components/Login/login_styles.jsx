@@ -1,7 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const iconWidth = 'calc(100vw - 80px)'
-
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -12,7 +10,7 @@ const useStyles = makeStyles({
   },
   card: {
     padding: '20px',
-    paddingTop: '150px',
+    paddingTop: '170px',
     maxWidth: '500px',
   },
   bodyText: {
@@ -23,12 +21,15 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
   },
+  iconContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   icon: {
     justifyContent: 'center',
     position: 'absolute',
-    top: `calc(100vh - 1/2 * ${iconWidth})`,
-    width: iconWidth,
-    maxWidth: '340px',
+    top: `calc(100vh - 1/2 * 50vh)`,
+    width: '50vh',
     '-webkit-animation': '$rotation 7s infinite linear',
     '-moz-animation': '$rotation 7s linear infinite',
     'animation': '$rotation 7s linear infinite',
