@@ -1,38 +1,34 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+const iconWidth = 'calc(100vw - 80px)'
+
 const useStyles = makeStyles({
   container: {
-    paddingTop: '175px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    height: '100vh',
+    maxHeight: '100vh',
   },
   card: {
     padding: '20px',
+    paddingTop: '150px',
     maxWidth: '500px',
   },
-  title: {
-    fontFamily: 'lust-script-display',
-    fontStyle: 'normal',
-
-    fontWeight: 400,
-  },
   bodyText: {
-    fontFamily: 'lust-display',
-    fontStyle: 'italic',
-    fontWeight: 400,
     paddingTop: '24px',
   },
   cardAction: {
+    marginTop: '30px',
     display: 'flex',
     justifyContent: 'center',
   },
   icon: {
-    display: 'flex',
     justifyContent: 'center',
-    position: 'fixed',
-    bottom: '-21vh',
-    maxWidth: '350px',
+    position: 'absolute',
+    top: `calc(100vh - 1/2 * ${iconWidth})`,
+    width: iconWidth,
+    maxWidth: '340px',
     '-webkit-animation': '$rotation 7s infinite linear',
     '-moz-animation': '$rotation 7s linear infinite',
     'animation': '$rotation 7s linear infinite',

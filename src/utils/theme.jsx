@@ -31,7 +31,8 @@ const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
       body1: {
-        fontFamily: 'lust-script-display'
+        fontFamily: 'lust-display',
+        fontStyle: 'italic',
       },
       body2: {
         fontFamily: 'lust-display',
