@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter, Head } from 'next/router'
 
 import Stats from '../../src/components/Stats/Stats';
 import useGetAllStats from '../../src/utils/hooks/getStats';
@@ -78,16 +78,21 @@ const StatsIndex = ({ accessToken }) => {
   }, [limit, time, type]);
 
   return(
-    <Stats
-      limit={limit}
-      time={time}
-      type={type}
-      setLimit={setLimit}
-      setTime={setTime}
-      setType={setType}
-      items={items}
-      userName={userName}
-    />
+    <>
+      <Head>
+        <style>{'body { background-color: red; }'}</style>
+      </Head>
+      <Stats
+        limit={limit}
+        time={time}
+        type={type}
+        setLimit={setLimit}
+        setTime={setTime}
+        setType={setType}
+        items={items}
+        userName={userName}
+      />
+    </>
   );
 }
 

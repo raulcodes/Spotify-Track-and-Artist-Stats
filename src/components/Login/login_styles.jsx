@@ -1,5 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+import colors from '../../utils/colors';
+
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -7,6 +9,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     height: '100vh',
     maxHeight: '100vh',
+    color: props => props.darkMode ? colors.white : colors.black,
   },
   card: {
     padding: '20px',
@@ -20,6 +23,21 @@ const useStyles = makeStyles({
     marginTop: '30px',
     display: 'flex',
     justifyContent: 'center',
+  },
+  logInButton: {
+    color: props => props.darkMode ? colors.white : colors.black,
+    borderColor: props => props.darkMode ? colors.white : colors.black,
+  },
+  darkModeIcon: {
+    position: 'absolute',
+    top: '30px',
+    right: '30px',
+  },
+  whiteIcon: {
+    color: colors.white,
+  },
+  blackIcon: {
+    color: colors.black,
   },
   iconContainer: {
     display: 'flex',

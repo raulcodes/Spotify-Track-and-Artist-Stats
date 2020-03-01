@@ -2,6 +2,7 @@ import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 
+
 import theme from '../src/utils/theme';
 
 class MyDocument extends Document {

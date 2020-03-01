@@ -14,12 +14,12 @@ const theme = createMuiTheme({
       main: colors.BLACK,
     },
     background: {
-      paper: colors.White,
-      default: colors.White,
+      paper: colors.WHITE,
+      default: colors.WHITE,
     },
     common: {
       black: colors.BLACK,
-      white: colors.White,
+      white: colors.WHITE,
     }
   },
   typography: {
@@ -40,7 +40,6 @@ const theme = createMuiTheme({
     },
     MuiButton: {
       outlinedSecondary: {
-        borderColor: colors.BLACK,
         fontFamily: 'lust-display',
         fontStyle: 'italic',
         textTransform: 'none',
