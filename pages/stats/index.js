@@ -78,21 +78,16 @@ const StatsIndex = ({ accessToken }) => {
   }, [limit, time, type]);
 
   return(
-    <>
-      <Head>
-        <style>{'body { background-color: red; }'}</style>
-      </Head>
-      <Stats
-        limit={limit}
-        time={time}
-        type={type}
-        setLimit={setLimit}
-        setTime={setTime}
-        setType={setType}
-        items={items}
-        userName={userName}
-      />
-    </>
+    <Stats
+      limit={limit}
+      time={time}
+      type={type}
+      setLimit={setLimit}
+      setTime={setTime}
+      setType={setType}
+      items={items}
+      userName={userName}
+    />
   );
 }
 
