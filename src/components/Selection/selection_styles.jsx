@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
   select: {
     fontFamily: 'lust-display',
-    fontSize: '1em',
+    fontSize: '.875em',
     marginRight: '5px',
     marginTop: '0px',
     marginBottom: '0px',
