@@ -1,6 +1,5 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
 
 import useStyles from './stats_styles';
 import TrackList from '../TrackList/TrackList';
@@ -16,12 +15,19 @@ const Stats = ({
   setType,
   items,
   userName,
+  darkMode,
 }) => {
-  const classes = useStyles({});
+  React.useEffect(() => {
+    console.log(darkMode);
+    darkMode ? document.body.style = 'background-color: #2B2B2B;'
+    : document.body.style = 'background-color: #FFF4E8;'
+  }, [])
+
+  const classes = useStyles({ darkMode });
   return(
     <Container className={classes.container}>
-      <RecordIcon className={classes.icon} />
-      <Card elevation={0} className={classes.card}>
+      <RecordIcon className={classes.icon} darkMode={darkMode} />
+      <div className={classes.card}>
         <Selection
           limit={limit}
           time={time}
@@ -32,7 +38,7 @@ const Stats = ({
           userName={userName}
         />
         <TrackList items={items} />
-      </Card> 
+      </div> 
     </Container>
   );
 }

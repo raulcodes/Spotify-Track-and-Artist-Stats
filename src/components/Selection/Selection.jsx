@@ -19,7 +19,7 @@ const Selection = ({
   const classes = useStyles({});
 
   return(
-    <Card elevation={0} className={classes.selectCard}>
+    <div className={classes.selectCard}>
       <Typography variant="h4">
         Hello, {userName.split(' ')[0]}!
       </Typography>
@@ -34,7 +34,7 @@ const Selection = ({
           <TimeSelector time={time} setTime={setTime} />
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useRouter, Head } from 'next/router'
+import { useRouter } from 'next/router'
 
 import Stats from '../../src/components/Stats/Stats';
 import useGetAllStats from '../../src/utils/hooks/getStats';
 
-const StatsIndex = ({ accessToken }) => {
+const StatsIndex = ({ accessToken, darkMode }) => {
   const router = useRouter();
   useEffect(() => {
     if (!accessToken) {
@@ -87,10 +87,14 @@ const StatsIndex = ({ accessToken }) => {
       setType={setType}
       items={items}
       userName={userName}
+      darkMode={darkMode}
     />
   );
 }
 
-StatsIndex.getInitialProps = async ({ query }) => ({ accessToken: query.accessToken }); 
+StatsIndex.getInitialProps = async ({ query }) => ({ 
+  accessToken: query.accessToken,  
+  darkMode: (query.darkMode === 'true'),
+}); 
 
 export default StatsIndex;

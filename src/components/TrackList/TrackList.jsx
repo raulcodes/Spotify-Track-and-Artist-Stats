@@ -9,13 +9,13 @@ const TrackList = ({ items }) => {
   const classes = useStyles({});
 
   return(
-    <Card className={classes.card}>
+    <div className={classes.card}>
       <List>
         {items.map((i, key) => 
           <TrackItem k={key} item={i} />
         )}
       </List>
-    </Card>
+    </div>
   );
 };
 

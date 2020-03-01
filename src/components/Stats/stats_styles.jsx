@@ -1,10 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
+import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
   container: {
     paddingTop: '24px',
     display: 'flex',
     justifyContent: 'center',
+    color: props => props.darkMode ? colors.white : colors.black,
   },
   icon: {
     position: 'absolute',

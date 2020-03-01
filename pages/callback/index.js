@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 
 const Authorize = () => {
   const router = useRouter();
-  const expected_state = '125';
+  // const lightModeState = '124';
+  const darkModeState = '246';
 
   const getHashValue = (key) => {
     var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
@@ -12,8 +13,18 @@ const Authorize = () => {
 
   useEffect(() => {        
     const accessToken = getHashValue('access_token')
-    if ((expected_state === getHashValue('state')) && accessToken) {
-      router.replace({ pathname: '/stats', query: { accessToken: accessToken }});
+    if (accessToken) {
+      let darkMode = false;
+      if (getHashValue('state') === darkModeState) {
+        darkMode = true;
+      }
+      router.replace({ 
+        pathname: '/stats', 
+        query: { 
+          accessToken: accessToken,
+          darkMode: darkMode,
+        }
+      });
     } else {
       router.push('/');
     }

@@ -7,15 +7,18 @@ import IconButton from '@material-ui/core/IconButton';
 import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 import Brightness7RoundedIcon from '@material-ui/icons/Brightness7Rounded';
 
-const auth_url = 'https://accounts.spotify.com/authorize?client_id=e2273df8d7f94ae3b5cd7d865251dea3&redirect_uri=https:%2F%2Fspotify-track-and-artist-stats.now.sh%2Fcallback&response_type=token&state=125'
+import authURL from '../../utils/url';
 
 const Login = () => {
-  
   const [darkMode, setDarkMode] = React.useState(false)
   React.useEffect(() =>{
-    darkMode ? document.body.style = 'background: #2B2B2B;'
-    : document.body.style = 'background: #FFF4E8;'
+    darkMode ? document.body.style.backgroundColor = '#2B2B2B'
+    : document.body.style.backgroundColor = '#FFF4E8'
   }, [darkMode])
+
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+  }, [])
   
   const classes = useStyles({darkMode});
 
@@ -42,7 +45,7 @@ const Login = () => {
             className={classes.logInButton}
             variant="outlined" 
             color="secondary" 
-            href={auth_url}
+            href={authURL(darkMode)}
           >
             Log In to Spotify
           </Button>
