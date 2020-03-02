@@ -18,7 +18,6 @@ const Stats = ({
   darkMode,
 }) => {
   React.useEffect(() => {
-    console.log(darkMode);
     darkMode ? document.body.style = 'background-color: #2B2B2B;'
     : document.body.style = 'background-color: #FFF4E8;'
   }, [])
@@ -37,7 +36,7 @@ const Stats = ({
           setType={setType}
           userName={userName}
         />
-        <TrackList items={items} />
+        <TrackList items={items} darkMode={darkMode} />
       </div> 
     </Container>
   );

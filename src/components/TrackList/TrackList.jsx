@@ -1,18 +1,14 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
 
-import useStyles from './track_styles';
 import List from '@material-ui/core/List';
 import TrackItem from './TrackItem';
 
-const TrackList = ({ items }) => {
-  const classes = useStyles({});
-
+const TrackList = ({ items, darkMode }) => {
   return(
-    <div className={classes.card}>
+    <div>
       <List>
         {items.map((i, key) => 
-          <TrackItem k={key} item={i} />
+          <TrackItem k={key} item={i} darkMode={darkMode} />
         )}
       </List>
     </div>

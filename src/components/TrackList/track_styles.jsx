@@ -1,9 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
+import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
-  card: {
-
-  },
   number: {
     paddingRight: '10px',
   },
@@ -11,9 +9,12 @@ const useStyles = makeStyles({
     width: 60,
     height: 60,
     marginRight: '20px',
-    marginTop: '20px',
-    marginBottom: '20px',
+    marginTop: '10px',
+    marginBottom: '10px',
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+  },
+  divider: {
+    backgroundColor: props => props.darkMode ? colors.white : colors.black,
   }
 });
 

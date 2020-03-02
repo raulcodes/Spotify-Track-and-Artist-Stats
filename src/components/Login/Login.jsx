@@ -20,7 +20,7 @@ const Login = () => {
     document.body.style.overflow = 'hidden';
   }, [])
   
-  const classes = useStyles({darkMode});
+  const classes = useStyles({ darkMode });
 
   return(
     <Container className={classes.container}>

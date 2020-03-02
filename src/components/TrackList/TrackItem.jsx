@@ -8,8 +8,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import { Typography } from '@material-ui/core';
 
-const TrackItem = ({ k, item }) => {
-  const classes = useStyles({});
+const TrackItem = ({ k, item, darkMode }) => {
+  const classes = useStyles({ darkMode });
   const { type, album, name, artists } = item;
   return (
     <>
@@ -23,10 +23,11 @@ const TrackItem = ({ k, item }) => {
             <ListItemAvatar>
               <Avatar className={classes.avatar} variant="square" src={album.images[0].url} alt={name} />
             </ListItemAvatar>        
-            <ListItemText 
+            <ListItemText
               primary={`${name.slice(0,35)}${name.length > 35 ? '...' : ''}`} 
               primaryTypographyProps={{ variant: 'body2' }}
               secondary={artists[0].name} 
+              secondaryTypographyProps={{ variant: 'subtitle1' }}
             />
           </>
           :
@@ -38,7 +39,7 @@ const TrackItem = ({ k, item }) => {
           </>
         }
       </ListItem>
-      <Divider />
+      <Divider className={classes.divider} />
     </>
   )
 }
