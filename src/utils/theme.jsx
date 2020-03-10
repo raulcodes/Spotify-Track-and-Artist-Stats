@@ -1,26 +1,14 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-
-const colors = {
-  BLACK: '#2B2B2B',
-  WHITE: '#FFF4E8',
-}
+import colors from './colors';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: colors.WHITE,
+      main: colors.white,
     },
     secondary: {
-      main: colors.BLACK,
+      main: colors.black,
     },
-    background: {
-      paper: colors.WHITE,
-      default: colors.WHITE,
-    },
-    common: {
-      black: colors.BLACK,
-      white: colors.WHITE,
-    }
   },
   typography: {
     fontFamily: [
@@ -31,11 +19,13 @@ const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
       body1: {
-        fontFamily: 'lust-display',
+        fontFamily: 'zeitung',
         fontStyle: 'italic',
+        fontWeight: '600',
       },
       body2: {
-        fontFamily: 'lust-display',
+        fontFamily: 'zeitung',
+        fontStyle: 'italic',
       }
     },
     MuiButton: {

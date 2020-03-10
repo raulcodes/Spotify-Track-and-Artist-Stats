@@ -1,6 +1,6 @@
-const authURL = (darkMode) => {
+const authURL = (dark) => {
   const host = 'https://accounts.spotify.com/authorize';
-  const code = darkMode ? '246' : '124';
+  const code = dark ? '246' : '124';
   const params = {
     'client_id': 'e2273df8d7f94ae3b5cd7d865251dea3',
     'redirect_uri': 'https://spotify-track-and-artist-stats.now.sh/callback',

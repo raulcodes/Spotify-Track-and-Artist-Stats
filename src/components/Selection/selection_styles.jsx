@@ -5,14 +5,14 @@ const useStyles = makeStyles({
     paddingTop: '24px',
   },
   selectors: {
-    fontFamily: 'lust-display',
+    fontFamily: 'zeitung',
     textAlign: 'center',
     display: 'flex',
     paddingTop: '5px',
     paddingBottom: '5px',
   },
   select: {
-    fontFamily: 'lust-display',
+    fontFamily: 'zeitung',
     fontSize: '.875em',
     marginRight: '5px',
     marginTop: '0px',

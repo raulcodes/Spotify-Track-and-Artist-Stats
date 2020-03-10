@@ -15,17 +15,17 @@ const Stats = ({
   setType,
   items,
   userName,
-  darkMode,
+  dark,
 }) => {
   React.useEffect(() => {
-    darkMode ? document.body.style = 'background-color: #2B2B2B;'
+    dark ? document.body.style = 'background-color: #2B2B2B;'
     : document.body.style = 'background-color: #FFF4E8;'
   }, [])
 
-  const classes = useStyles({ darkMode });
+  const classes = useStyles({ dark });
   return(
     <Container className={classes.container}>
-      <RecordIcon className={classes.icon} darkMode={darkMode} />
+      <RecordIcon className={classes.icon} dark={dark} />
       <div className={classes.card}>
         <Selection
           limit={limit}
@@ -36,7 +36,7 @@ const Stats = ({
           setType={setType}
           userName={userName}
         />
-        <TrackList items={items} darkMode={darkMode} />
+        <TrackList items={items} dark={dark} />
       </div> 
     </Container>
   );

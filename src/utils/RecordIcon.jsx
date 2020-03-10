@@ -4,7 +4,7 @@ function RecordIcon(props) {
   return (
     <svg viewBox="0 0 96 96" {...props}>
       <defs>
-        <style>{`.prefix__cls-1{fill:${props.darkMode ? colors.white : colors.black}}`}</style>
+        <style>{`.prefix__cls-1{fill:${props.dark ? colors.white : colors.black}}`}</style>
       </defs>
       <title>{"Asset 14"}</title>
       <g id="prefix__Layer_2" data-name="Layer 2">

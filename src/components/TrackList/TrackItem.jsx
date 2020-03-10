@@ -8,8 +8,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import { Typography } from '@material-ui/core';
 
-const TrackItem = ({ k, item, darkMode }) => {
-  const classes = useStyles({ darkMode });
+const TrackItem = ({ k, item, dark }) => {
+  const classes = useStyles({ dark });
   const { type, album, name, artists } = item;
   return (
     <>

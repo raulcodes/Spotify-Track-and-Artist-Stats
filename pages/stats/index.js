@@ -1,80 +1,54 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router'
 
 import Stats from '../../src/components/Stats/Stats';
-import useGetAllStats from '../../src/utils/hooks/getStats';
+import getAllStats from '../../src/utils/hooks/getStats';
 
-const StatsIndex = ({ accessToken, darkMode }) => {
-  const router = useRouter();
-  useEffect(() => {
-    if (!accessToken) {
-      router.push('/');
-    } 
-  }, []);
-
-  const [items, setItems] = useState([])
-
-  const [
-    short_tracks,
-    medium_tracks,
-    long_tracks,
-    short_artists,
-    medium_artists,
-    long_artists,
-    userName,
-  ] = useGetAllStats(accessToken);
-  
-  useEffect(() => {
-    let items = []
-    if (!short_tracks) {
-      router.push('/');
-    } 
-    short_tracks.slice(0, 10).map((track) =>
-    items.push(track)
-    )
-    setItems(items)
-  }, [short_tracks]);
+const StatsIndex = ({
+  dark, 
+  stats: {
+    shortTracks,
+    mediumTracks,
+    longTracks,
+    shortArtists,
+    mediumArtists,
+    longArtists,
+    userName
+  } 
+}) => {
+  const [items, setItems] = useState([]);
   
   const [limit, setLimit] = useState(10);
   const [time, setTime] = useState('short');
   const [type, setType] = useState('tracks');
   useEffect(() => {
-    let items = []
     switch (time) {
       case 'short':
-        if (type === 'tracks') {
-          short_tracks.slice(0, limit).map((track) =>
-            items.push(track)
-          )
-        } else {
-          short_artists.slice(0, limit).map((artist) =>
-            items.push(artist)
-          )
-        } break
+        if (type === 'tracks')
+          if (shortTracks)
+            setItems(shortTracks.slice(0, limit))
+        else 
+          if (shortArtists)
+            setItems(shortArtists.slice(0, limit))
+        break;
       case 'medium':
-        if (type === 'tracks') {
-          medium_tracks.slice(0, limit).map((track) =>
-            items.push(track)
-          )
-        } else {
-          medium_artists.slice(0, limit).map((artist) =>
-            items.push(artist)
-          )
-        } break
+        if (type === 'tracks') 
+          if (mediumTracks) 
+            setItems(mediumTracks.slice(0, limit))
+        else 
+          if (mediumArtists)
+            setItems(mediumArtists.slice(0, limit))
+        break;
       case 'long':
-        if (type === 'tracks') {
-          long_tracks.slice(0, limit).map((track) =>
-            items.push(track)
-            )
-        } else {
-          long_artists.slice(0, limit).map((artist) =>
-            items.push(artist)
-          )
-        } break
+        if (type === 'tracks') 
+          if (longTracks)
+            setItems(longTracks.slice(0, limit))
+        else
+          if (longArtists)
+            setItems(longArtists.slice(0, limit))
+        break
       default:
-        items.push('something went wrong!')
+        setItems([])
     }
-    setItems(items)
   }, [limit, time, type]);
 
   return(
@@ -87,14 +61,14 @@ const StatsIndex = ({ accessToken, darkMode }) => {
       setType={setType}
       items={items}
       userName={userName}
-      darkMode={darkMode}
+      dark={dark}
     />
   );
 }
 
 StatsIndex.getInitialProps = async ({ query }) => ({ 
-  accessToken: query.accessToken,  
-  darkMode: (query.darkMode === 'true'),
+  dark: (query.darkMode === 'true'),
+  stats: await getAllStats(query.accessToken)
 }); 
 
 export default StatsIndex;

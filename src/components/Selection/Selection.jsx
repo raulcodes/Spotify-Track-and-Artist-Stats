@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 
 import useStyles from './selection_styles';
@@ -21,7 +20,7 @@ const Selection = ({
   return(
     <div className={classes.selectCard}>
       <Typography variant="h4">
-        Hello, {userName.split(' ')[0]}!
+        Hello, {userName}!
       </Typography>
       <div className={classes.selectionPrompt}>
         <Typography variant="body2">Here are your top</Typography>

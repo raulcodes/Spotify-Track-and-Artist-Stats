@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     paddingTop: '24px',
     display: 'flex',
     justifyContent: 'center',
-    color: props => props.darkMode ? colors.white : colors.black,
+    color: props => props.dark ? colors.white : colors.black,
   },
   icon: {
     position: 'absolute',

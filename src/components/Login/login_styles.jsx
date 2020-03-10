@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     height: '100vh',
     maxHeight: '100vh',
-    color: props => props.darkMode ? colors.white : colors.black,
+    color: props => props.dark ? colors.white : colors.black,
   },
   card: {
     padding: '20px',
@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   logInButton: {
-    color: props => props.darkMode ? colors.white : colors.black,
-    borderColor: props => props.darkMode ? colors.white : colors.black,
+    color: props => props.dark ? colors.white : colors.black,
+    borderColor: props => props.dark ? colors.white : colors.black,
   },
   darkModeIcon: {
     position: 'absolute',

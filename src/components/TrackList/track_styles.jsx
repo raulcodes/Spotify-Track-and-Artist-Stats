@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
   },
   divider: {
-    backgroundColor: props => props.darkMode ? colors.white : colors.black,
+    backgroundColor: props => props.dark ? colors.white : colors.black,
   }
 });
 

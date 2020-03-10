@@ -10,24 +10,24 @@ import Brightness7RoundedIcon from '@material-ui/icons/Brightness7Rounded';
 import authURL from '../../utils/url';
 
 const Login = () => {
-  const [darkMode, setDarkMode] = React.useState(false)
+  const [dark, setDark] = React.useState(true)
   React.useEffect(() =>{
-    darkMode ? document.body.style.backgroundColor = '#2B2B2B'
+    dark ? document.body.style.backgroundColor = '#2B2B2B'
     : document.body.style.backgroundColor = '#FFF4E8'
-  }, [darkMode])
+  }, [dark])
 
   React.useEffect(() => {
     document.body.style.overflow = 'hidden';
   }, [])
   
-  const classes = useStyles({ darkMode });
+  const classes = useStyles({ dark });
 
   return(
     <Container className={classes.container}>
       <div className={classes.card}>
-        <IconButton className={classes.darkModeIcon} onClick={() => setDarkMode(prev => !prev)}>
+        <IconButton className={classes.darkModeIcon} onClick={() => setDark(prev => !prev)}>
           {
-            darkMode 
+            dark
             ? <Brightness7RoundedIcon className={classes.whiteIcon} />
             : <Brightness4RoundedIcon className={classes.blackIcon} />
           }
@@ -37,7 +37,7 @@ const Login = () => {
             Spotify Stats
           </Typography>
           <Typography variant="body1" className={classes.bodyText}>
-            Discover what your Top listened to tracks and artists are and turn them into playlists!
+            Discover what your top listened to tracks and artists are and turn them into playlists!
           </Typography>
         </div>
         <div className={classes.cardAction}>
@@ -45,13 +45,13 @@ const Login = () => {
             className={classes.logInButton}
             variant="outlined" 
             color="secondary" 
-            href={authURL(darkMode)}
+            href={authURL(dark)}
           >
             Log In to Spotify
           </Button>
         </div>
         <div className={classes.iconContainer}>
-          <RecordIcon className={classes.icon} darkMode={darkMode} />
+          <RecordIcon className={classes.icon} dark={dark} />
         </div>
       </div>
     </Container>
