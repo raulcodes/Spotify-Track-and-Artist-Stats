@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 
 import useStyles from './stats_styles';
@@ -6,21 +6,27 @@ import TrackList from '../TrackList/TrackList';
 import Selection from '../Selection/Selection';
 import RecordIcon from '../../utils/RecordIcon';
 
+interface StatsProps {
+  stats: Stats;
+  dark: boolean;
+}
+
 const Stats = ({
-  limit,
-  time,
-  type,
-  setLimit,
-  setTime,
-  setType,
-  items,
-  userName,
+  stats,
   dark,
-}) => {
+}: StatsProps) => {
   React.useEffect(() => {
-    dark ? document.body.style = 'background-color: #2B2B2B;'
-    : document.body.style = 'background-color: #FFF4E8;'
+    dark ? document.body.style.backgroundColor = '#2B2B2B'
+    : document.body.style.backgroundColor = '#FFF4E8'
   }, [])
+
+  const [items, setItems] = useState([] as Array<Track | Artist>);
+  const [limit, setLimit] = useState(10);
+  const [time, setTime] = useState('short');
+  const [type, setType] = useState('tracks');
+  useEffect(() => {
+    setItems(stats[type][time].slice(0, limit))
+  }, [limit, time, type]);
 
   const classes = useStyles({ dark });
   return(
@@ -34,7 +40,7 @@ const Stats = ({
           setLimit={setLimit}
           setTime={setTime}
           setType={setType}
-          userName={userName}
+          userName={stats.userName}
         />
         <TrackList items={items} dark={dark} />
       </div> 

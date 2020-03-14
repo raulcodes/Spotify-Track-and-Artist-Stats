@@ -19,13 +19,17 @@ const getUserName = (token: string): Promise<Response> =>
   .then(resp => resp.display_name);
 
 const getAllStats = async (token: string) => ({
-  shortTracks: await getStats('tracks', 'short_term', token),
-  mediumTracks: await getStats('tracks', 'medium_term', token),
-  longTracks: await getStats('tracks', 'long_term', token),
-  shortArtists: await getStats('artists', 'short_term', token),
-  mediumArtists: await getStats('artists', 'medium_term', token),
-  longArtists: await getStats('artists', 'long_term', token),
+  tracks: {
+    short: await getStats('tracks', 'short_term', token), 
+    medium: await getStats('tracks', 'medium_term', token),
+    long: await getStats('tracks', 'long_term', token),
+  },
+  artists: {
+    short: await getStats('artists', 'short_term', token),
+    medium: await getStats('artists', 'medium_term', token),
+    long: await getStats('artists', 'long_term', token),
+  },
   userName: await getUserName(token),
-})
+});
 
 export default getAllStats;

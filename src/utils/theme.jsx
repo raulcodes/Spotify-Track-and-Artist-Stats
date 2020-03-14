@@ -12,21 +12,22 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      'lust-script-display',
+      'zeitung',
       'serif'
     ].join(','),
   },
   overrides: {
     MuiTypography: {
       body1: {
-        fontFamily: 'zeitung',
         fontStyle: 'italic',
         fontWeight: '600',
       },
       body2: {
-        fontFamily: 'zeitung',
         fontStyle: 'italic',
-      }
+      },
+      h4: {
+        fontFamily: 'lust-script-display',
+      },
     },
     MuiButton: {
       outlinedSecondary: {

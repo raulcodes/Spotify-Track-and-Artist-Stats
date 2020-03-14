@@ -27,7 +27,7 @@ const TrackItemContent = ({ data, dark }: TrackItemContentProps) => {
           primary={`${name.slice(0,35)}${name.length > 35 ? '...' : ''}`} 
           primaryTypographyProps={{ variant: 'body2' }}
           secondary={artists[0].name} 
-          secondaryTypographyProps={{ variant: 'subtitle1' }}
+          secondaryTypographyProps={{ variant: 'subtitle1', classes: { root: classes.contentText } }}
         />
       </>
     )

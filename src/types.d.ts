@@ -56,3 +56,21 @@ declare interface Track {
   type: string;
   uri: string;
 }
+
+interface TrackTimes {
+  [short: string]: Array<Track>;
+  [medium: string]: Array<Track>;
+  [long: string]: Array<Track>;
+}
+
+interface ArtistTimes {
+  [short: string]: Array<Artist>;
+  [medium: string]: Array<Artist>;
+  [long: string]: Array<Artist>;
+}
+
+declare interface Stats {
+  [tracks: string]: TrackTimes;
+  [artists: string]: ArtistTimes;
+  [userName: string]: string;
+}
