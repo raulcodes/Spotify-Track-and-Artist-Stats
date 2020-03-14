@@ -1,11 +1,12 @@
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import RecordIcon from '../../utils/RecordIcon';
-import Typography from '@material-ui/core/Typography';
-import useStyles from './login_styles';
-import IconButton from '@material-ui/core/IconButton';
 import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 import Brightness7RoundedIcon from '@material-ui/icons/Brightness7Rounded';
+import Container from '@material-ui/core/Container';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+
+import RecordIcon from '../../utils/RecordIcon';
+import useStyles from './login_styles';
 
 import authURL from '../../utils/url';
 
