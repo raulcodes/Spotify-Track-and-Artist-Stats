@@ -11,7 +11,7 @@ import useStyles from './login_styles';
 import authURL from '../../utils/url';
 
 const Login = () => {
-  const [dark, setDark] = React.useState(true)
+  const [dark, setDark] = React.useState(false)
   React.useEffect(() =>{
     dark ? document.body.style.backgroundColor = '#2B2B2B'
     : document.body.style.backgroundColor = '#FFF4E8'
