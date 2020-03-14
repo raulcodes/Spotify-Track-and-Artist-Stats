@@ -8,21 +8,21 @@ import Avatar from '@material-ui/core/Avatar';
 import Divider from '@material-ui/core/Divider';
 import { Typography } from '@material-ui/core';
 
-const TrackItem = ({ k, item, dark }) => {
+const TrackItem = ({ rank, item, dark }) => {
   const classes = useStyles({ dark });
   const { type, album, name, artists } = item;
   return (
     <>
-      <ListItem id={k}>
+      <ListItem id={rank}>
         <ListItemAvatar className={classes.number}>
-          <Typography variant="h4">{(k < 9) ? `0${k+1}` : `${k+1}`}</Typography>
+          <Typography variant="h4">{(rank < 9) ? `0${rank+1}` : `${rank+1}`}</Typography>
         </ListItemAvatar>
         {
           (type === 'track') ?
           <>
             <ListItemAvatar>
               <Avatar className={classes.avatar} variant="square" src={album.images[0].url} alt={name} />
-            </ListItemAvatar>        
+            </ListItemAvatar>     
             <ListItemText
               primary={`${name.slice(0,35)}${name.length > 35 ? '...' : ''}`} 
               primaryTypographyProps={{ variant: 'body2' }}

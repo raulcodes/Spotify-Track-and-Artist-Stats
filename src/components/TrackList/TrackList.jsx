@@ -7,8 +7,8 @@ const TrackList = ({ items, dark }) => {
   return(
     <div>
       <List>
-        {items.map((i, key) => 
-          <TrackItem k={key} item={i} dark={dark} />
+        {items.map((i, rank) => 
+          <TrackItem key={rank} rank={rank} item={i} dark={dark} />
         )}
       </List>
     </div>

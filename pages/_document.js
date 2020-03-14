@@ -15,7 +15,9 @@ class MyDocument extends Document {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <script src='nprogress.js'></script>
           <link rel="stylesheet" href="https://use.typekit.net/saw2rwz.css" />
+          <link rel="stylesheet" type="text/css" href="nprogress.css" />
         </Head>
         <body>
           <Main />

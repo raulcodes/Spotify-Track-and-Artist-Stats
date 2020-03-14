@@ -1,10 +1,23 @@
 import { useEffect } from 'react';
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router';
+import NProgress from 'nprogress';
 
 const Authorize = () => {
   const router = useRouter();
   // const lightModeState = '124';
   const darkModeState = '246';
+
+  Router.onRouteChangeStart = () => {
+    NProgress.start();
+  };
+
+  Router.onRouteChangeComplete = () => {
+    NProgress.done();
+  };
+  
+  Router.onRouteChangeError = () => {
+    NProgress.done();
+  };
 
   const getHashValue = (key) => {
     var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
