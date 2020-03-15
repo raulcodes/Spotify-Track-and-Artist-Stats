@@ -20,6 +20,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" type="text/css" href="nprogress.css" />
         </Head>
         <body>
+          {/* <h1>hello world</h1> */}
           <Main />
           <NextScript />
         </body>
