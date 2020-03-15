@@ -23,6 +23,11 @@ const theme = createMuiTheme({
         height: 70,
       },
     },
+    MuiDivider: {
+      root: {
+        backgroundColor: colors.white,
+      }
+    },
     MuiTypography: {
       body1: {
         fontStyle: 'italic',
@@ -49,6 +54,11 @@ const theme = createMuiTheme({
         paddingRight: '24px'
       },
     },
+    MuiSelect: {
+      root: {
+        color: colors.white,
+      }
+    }
   }
 });
 
