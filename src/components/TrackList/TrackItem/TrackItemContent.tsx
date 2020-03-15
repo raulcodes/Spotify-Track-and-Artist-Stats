@@ -7,14 +7,13 @@ import Avatar from '@material-ui/core/Avatar';
 
 interface TrackItemContentProps {
   data: Track | Artist;
-  dark: boolean;
 }
 
 const isTrack = (data: Track | Artist): data is Track =>
   (data as Track).album !== undefined;
 
-const TrackItemContent = ({ data, dark }: TrackItemContentProps) => {
-  const classes = useStyles({ dark });
+const TrackItemContent = ({ data }: TrackItemContentProps) => {
+  const classes = useStyles({});
 
   if (isTrack(data)) {
     const { album, artists, name } = data;

@@ -10,16 +10,15 @@ import TrackItemRank from './TrackItemRank';
 interface TrackItemProps {
   rank: number;
   item: Track | Artist;
-  dark: boolean;
 }
 
-const TrackItem = ({ rank, item, dark }: TrackItemProps) => {
-  const classes = useStyles({ dark });
+const TrackItem = ({ rank, item }: TrackItemProps) => {
+  const classes = useStyles();
   return (
     <>
       <ListItem id={`${rank}`}>
-        <TrackItemRank rank={rank} dark={dark} />
-        <TrackItemContent data={item} dark={dark} />
+        <TrackItemRank rank={rank} />
+        <TrackItemContent data={item} />
       </ListItem>
       <Divider className={classes.divider} />
     </>

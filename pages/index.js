@@ -1,7 +1,7 @@
 import Login from '../src/components/Login/Login';
 
-const Index = ({ dark, setDark }) => (
-  <Login dark={dark} setDark={setDark} />
+const Index = () => (
+  <Login />
 );
 
 export default Index;

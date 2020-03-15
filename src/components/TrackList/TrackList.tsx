@@ -5,13 +5,12 @@ import TrackItem from './TrackItem/TrackItem';
 
 interface TrackListProps {
   items: Array<Track | Artist>;
-  dark: boolean;
 }
 
-const TrackList = ({ items, dark }: TrackListProps) => 
+const TrackList = ({ items }: TrackListProps) => 
   <List>
     {items.map((item, rank) => 
-      <TrackItem key={rank} rank={rank} item={item} dark={dark} />
+      <TrackItem key={rank} rank={rank} item={item} />
     )}
   </List>
 

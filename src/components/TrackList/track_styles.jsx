@@ -14,10 +14,10 @@ const useStyles = makeStyles({
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
   },
   contentText: {
-    color: props => props.dark ? colors.white : colors.black,
+    color: colors.white,
   },
   divider: {
-    backgroundColor: props => props.dark ? colors.white : colors.black,
+    backgroundColor: colors.white,
   }
 });
 

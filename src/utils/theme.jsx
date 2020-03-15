@@ -26,12 +26,14 @@ const theme = createMuiTheme({
         fontStyle: 'italic',
       },
       h4: {
-        fontFamily: 'lust-script-display',
+        fontFamily: 'alegreya',
+        fontWeight: '700',
       },
     },
     MuiButton: {
       outlinedSecondary: {
-        fontFamily: 'lust-display',
+        fontFamily: 'alegreya',
+        fontWeight: '700',
         fontStyle: 'italic',
         textTransform: 'none',
         borderWidth: '1.5px',

@@ -1,9 +1,9 @@
 import colors from './colors';
 
-const RecordIcon = ({ dark, ...props }) => 
+const RecordIcon = ({ ...props }) => 
   <svg viewBox="0 0 96 96" {...props}>
     <defs>
-      <style>{`.prefix__cls-1{fill:${dark ? colors.white : colors.black}}`}</style>
+      <style>{`.prefix__cls-1{fill:${colors.white}}`}</style>
     </defs>
     <title>{"Record Icon"}</title>
     <g id="prefix__Layer_2" data-name="Layer 2">

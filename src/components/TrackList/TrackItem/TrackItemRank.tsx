@@ -6,11 +6,10 @@ import { Typography } from '@material-ui/core';
 
 interface TrackItemRankProps {
   rank: number;
-  dark: boolean;
 }
 
-const TrackItemRank = ({ rank, dark }: TrackItemRankProps) => {
-  const classes = useStyles({ dark });
+const TrackItemRank = ({ rank }: TrackItemRankProps) => {
+  const classes = useStyles({});
   return (
     <ListItemAvatar className={classes.number}>
       <Typography variant="h4">{(rank < 9) ? `0${rank+1}` : `${rank+1}`}</Typography>

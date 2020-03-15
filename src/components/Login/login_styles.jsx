@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     height: '100vh',
     maxHeight: '100vh',
-    color: props => props.dark ? colors.white : colors.black,
+    color: colors.white,
   },
   card: {
     padding: '20px',
@@ -25,13 +25,8 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   logInButton: {
-    color: props => props.dark ? colors.white : colors.black,
-    borderColor: props => props.dark ? colors.white : colors.black,
-  },
-  darkModeIcon: {
-    position: 'absolute',
-    top: '30px',
-    right: '30px',
+    color: colors.white,
+    borderColor: colors.white,
   },
   whiteIcon: {
     color: colors.white,
@@ -45,9 +40,9 @@ const useStyles = makeStyles({
   },
   icon: {
     justifyContent: 'center',
-    position: 'absolute',
-    top: `calc(100vh - 1/2 * 50vh)`,
-    width: '50vh',
+    position: 'relative',
+    marginTop: '10vh',
+    width: '30vh',
     '-webkit-animation': '$rotation 7s infinite linear',
     '-moz-animation': '$rotation 7s linear infinite',
     'animation': '$rotation 7s linear infinite',

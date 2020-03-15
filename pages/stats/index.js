@@ -1,16 +1,12 @@
 import Stats from '../../src/components/Stats/Stats';
 import getAllStats from '../../src/utils/hooks/getStats';
 
-const StatsIndex = ({ dark, setDark, stats }) => 
+const StatsIndex = ({ stats }) => 
   <Stats
     stats={stats}
-    dark={dark}
-    setDark={setDark}
   />
 
-StatsIndex.getInitialProps = async ({ setDark, query }) => ({ 
-  dark: query.darkMode,
-  setDark,
+StatsIndex.getInitialProps = async ({ query }) => ({ 
   stats: await getAllStats(query.accessToken)
 });
 

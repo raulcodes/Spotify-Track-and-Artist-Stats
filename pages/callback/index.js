@@ -4,8 +4,7 @@ import NProgress from 'nprogress';
 
 const Authorize = () => {
   const router = useRouter();
-  // const lightModeState = '124';
-  const darkModeState = '246';
+  const expectedState = '246';
 
   Router.onRouteChangeStart = () => {
     NProgress.start();
@@ -26,16 +25,11 @@ const Authorize = () => {
 
   useEffect(() => {        
     const accessToken = getHashValue('access_token')
-    if (accessToken) {
-      let darkMode = false;
-      if (getHashValue('state') === darkModeState) {
-        darkMode = true;
-      }
+    if (accessToken && getHashValue('state') === expectedState) {
       router.replace({ 
         pathname: '/stats', 
         query: { 
           accessToken: accessToken,
-          darkMode: darkMode,
         }
       });
     } else {
