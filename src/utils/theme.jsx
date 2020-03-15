@@ -17,6 +17,12 @@ const theme = createMuiTheme({
     ].join(','),
   },
   overrides: {
+    MuiAvatar: {
+      root: {
+        width: 70,
+        height: 70,
+      },
+    },
     MuiTypography: {
       body1: {
         fontStyle: 'italic',

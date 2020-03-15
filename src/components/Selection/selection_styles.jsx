@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
   selectCard: {
@@ -12,11 +13,13 @@ const useStyles = makeStyles({
     paddingBottom: '5px',
   },
   select: {
+    color: colors.white,
     fontFamily: 'zeitung',
     fontSize: '.875em',
     marginRight: '5px',
     marginTop: '0px',
     marginBottom: '0px',
+
   },
   selectionPrompt: {
     paddingTop: '24px'

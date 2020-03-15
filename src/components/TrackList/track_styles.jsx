@@ -3,11 +3,9 @@ import colors from '../../utils/colors';
 
 const useStyles = makeStyles({
   number: {
-    paddingRight: '10px',
+    paddingRight: '5px',
   },
   avatar: {
-    width: 60,
-    height: 60,
     marginRight: '20px',
     marginTop: '10px',
     marginBottom: '10px',
