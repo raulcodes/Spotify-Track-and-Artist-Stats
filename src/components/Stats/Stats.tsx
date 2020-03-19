@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 
 import useStyles from './stats_styles';
+import CreatePlaylist from '../CreatePlaylist/CreatePlaylist';
 import TrackList from '../TrackList/TrackList';
 import Selection from '../Selection/Selection';
 
@@ -12,6 +13,7 @@ interface StatsProps {
 const Stats = ({
   stats,
 }: StatsProps) => {
+  const { userName } = stats;
   const [items, setItems] = useState([] as Array<Track | Artist>);
   const [limit, setLimit] = useState(10);
   const [time, setTime] = useState('short');
@@ -31,8 +33,19 @@ const Stats = ({
           setLimit={setLimit}
           setTime={setTime}
           setType={setType}
-          userName={stats.userName}
+          userName={userName}
         />
+        {
+          type === 'tracks'
+          ? 
+          <CreatePlaylist
+            items={items} 
+            limit={limit}
+            time={time}
+          />
+          :
+          null
+        }
         <TrackList items={items} />
       </div> 
     </Container>
