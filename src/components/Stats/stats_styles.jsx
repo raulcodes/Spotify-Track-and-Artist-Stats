@@ -6,9 +6,11 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     color: colors.white,
+    maxHeight: '100vh',
   },
   card: {
-    paddingTop: '4vh',
+    paddingTop: '5vh',
+    maxHeight: '20vh',
   }
 });
 

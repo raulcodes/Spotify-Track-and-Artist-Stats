@@ -48,6 +48,8 @@ const theme = createMuiTheme({
         fontStyle: 'italic',
         textTransform: 'none',
         borderWidth: '1.5px',
+        color: colors.white,
+        borderColor: colors.white,
       },
       label: {
         paddingLeft: '24px',

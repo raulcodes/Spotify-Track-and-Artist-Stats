@@ -16,6 +16,10 @@ const useStyles = makeStyles({
   },
   divider: {
     backgroundColor: colors.white,
+  },
+  listContainer: {
+    maxHeight: '60vh',
+    overflowY: 'scroll',
   }
 });
 

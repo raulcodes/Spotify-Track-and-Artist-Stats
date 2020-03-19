@@ -27,7 +27,6 @@ const Login = () => {
         </div>
         <div className={classes.cardAction}>
           <Button 
-            className={classes.logInButton}
             variant="outlined" 
             color="secondary" 
             href={authURL()}

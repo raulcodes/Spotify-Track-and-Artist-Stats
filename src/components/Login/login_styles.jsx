@@ -24,10 +24,6 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
   },
-  logInButton: {
-    color: colors.white,
-    borderColor: colors.white,
-  },
   whiteIcon: {
     color: colors.white,
   },
