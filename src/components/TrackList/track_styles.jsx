@@ -18,6 +18,8 @@ const useStyles = makeStyles({
     backgroundColor: colors.white,
   },
   listContainer: {
+    border: `1px solid ${colors.white}`,
+    borderRadius: '5px',
     maxHeight: '60vh',
     overflowY: 'scroll',
   }

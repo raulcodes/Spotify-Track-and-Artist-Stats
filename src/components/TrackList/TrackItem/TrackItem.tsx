@@ -20,7 +20,7 @@ const TrackItem = ({ rank, item }: TrackItemProps) => {
         <TrackItemRank rank={rank} />
         <TrackItemContent data={item} />
       </ListItem>
-      <Divider className={classes.divider} />
+      <Divider className={classes.divider} variant="middle" />
     </>
   )
 }

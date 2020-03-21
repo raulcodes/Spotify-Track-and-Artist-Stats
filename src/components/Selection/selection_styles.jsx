@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   selectCard: {
     paddingTop: '24px',
+    paddingBottom: '24px',
   },
   selectors: {
     fontFamily: 'zeitung',
