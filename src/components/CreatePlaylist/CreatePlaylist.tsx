@@ -4,12 +4,14 @@ import PlaylistDialog from './Dialog';
 import PlaylistButton from './Button';
 
 interface CreatePlaylistProps {
-  items: Array<Track | Artist>;
+  items: Items;
   limit: number;
   time: string;
+  token: string;
+  userId: string;
 }
 
-const CreatePlaylist = ({ items, limit, time }: CreatePlaylistProps) => {
+const CreatePlaylist = ({ items, limit, time, userId }: CreatePlaylistProps) => {
   const [open, setOpen] = React.useState(false);
   const timeText = () => {
     switch (time) {
@@ -30,6 +32,8 @@ const CreatePlaylist = ({ items, limit, time }: CreatePlaylistProps) => {
         items={items}
         dialogText={dialogText}
         placeholderText={placeholderText}
+        token={token}
+        userId={userId}
       />
     </>
   )

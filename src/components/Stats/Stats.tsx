@@ -8,13 +8,15 @@ import Selection from '../Selection/Selection';
 
 interface StatsProps {
   stats: Stats;
+  token: string;
 }
 
 const Stats = ({
   stats,
+  token,
 }: StatsProps) => {
-  const { userName } = stats;
-  const [items, setItems] = useState([] as Array<Track | Artist>);
+  const { userData } = stats;
+  const [items, setItems] = useState([] as Items);
   const [limit, setLimit] = useState(10);
   const [time, setTime] = useState('short');
   const [type, setType] = useState('tracks');
@@ -33,7 +35,7 @@ const Stats = ({
           setLimit={setLimit}
           setTime={setTime}
           setType={setType}
-          userName={userName}
+          userName={userData.display_name}
         />
         {
           type === 'tracks'
@@ -42,6 +44,8 @@ const Stats = ({
             items={items} 
             limit={limit}
             time={time}
+            token={token}
+            userId={userData.id}
           />
           :
           null

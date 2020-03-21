@@ -4,25 +4,33 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 
+import createPlaylist from '../../utils/hooks/createPlaylist';
+
 interface PlaylistDialogProps {
   dialogText: string;
-  items: Array<Track | Artist>;
+  items: Items;
   open: boolean;
   handleClose: () => void;
   placeholderText: string;
+  token: string;
+  userId: string;
 }
 
-const PlaylistDialog = ({ dialogText, open, handleClose, placeholderText }: PlaylistDialogProps) => 
+const PlaylistDialog = ({ 
+  dialogText, 
+  items, 
+  open, 
+  handleClose, 
+  placeholderText,
+  token,
+  userId,
+}: PlaylistDialogProps) => 
   <Dialog open={open} onClose={handleClose}>
-    <DialogTitle>Create a playlist</DialogTitle>
+    <DialogTitle>{dialogText}</DialogTitle>
     <DialogContent>
-      <DialogContentText>
-        {dialogText}
-      </DialogContentText>
       <TextField
         autoFocus
         margin="dense"
@@ -37,7 +45,7 @@ const PlaylistDialog = ({ dialogText, open, handleClose, placeholderText }: Play
       <Button onClick={handleClose} color="primary">
         Cancel
       </Button>
-      <Button onClick={handleClose} color="primary">
+      <Button onClick={() => createPlaylist(items, token, userId, dialogText)} color="primary">
         Create playlist
       </Button>
     </DialogActions>

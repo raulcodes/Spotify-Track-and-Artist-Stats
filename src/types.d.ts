@@ -57,6 +57,8 @@ declare interface Track {
   uri: string;
 }
 
+declare type Items = Array<Track | Artist>;
+
 interface TrackTimes {
   [short: string]: Array<Track>;
   [medium: string]: Array<Track>;
@@ -69,8 +71,28 @@ interface ArtistTimes {
   [long: string]: Array<Artist>;
 }
 
+interface Followers {
+  href: string;
+  total: number;
+}
+
+interface userData {
+  country: string;
+  display_name: string;
+  email: string;
+  external_urls: ExternalUrl;
+  followers: Followers;
+  href: string;
+  id: string;
+  images: Array<Image>;
+  product: string;
+  type: string;
+  uri: string;
+}
+
 declare interface Stats {
-  [tracks: string]: TrackTimes;
-  [artists: string]: ArtistTimes;
-  [userName: string]: string;
+  tracks: TrackTimes;
+  artists: ArtistTimes;
+  userData: userData;
+  [key: string]: any;
 }
