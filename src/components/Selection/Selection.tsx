@@ -2,9 +2,19 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 import useStyles from './selection_styles';
-import LimitSelector from '../Selection/LimitSelector';
-import TypeSelector from '../Selection/TypeSelector';
-import TimeSelector from '../Selection/TimeSelector';
+import LimitSelector from './LimitSelector';
+import TypeSelector from './TypeSelector';
+import TimeSelector from './TimeSelector';
+
+interface SelectionProps {
+  limit: number;
+  time: string;
+  type: string;
+  setLimit: React.Dispatch<React.SetStateAction<number>>;
+  setTime: React.Dispatch<React.SetStateAction<string>>;
+  setType: React.Dispatch<React.SetStateAction<string>>;
+  userName: string;
+}
 
 const Selection = ({ 
   limit, 
@@ -14,7 +24,7 @@ const Selection = ({
   setTime, 
   setType, 
   userName,
-}) => {
+}: SelectionProps): React.ReactElement => {
   const classes = useStyles({});
 
   return(

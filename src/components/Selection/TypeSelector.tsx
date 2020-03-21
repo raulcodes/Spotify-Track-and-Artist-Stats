@@ -3,10 +3,19 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import useStyles from './selection_styles';
 
-const TypeSelector = ({ type, setType }) => {
+interface TypeSelectorProps {
+  type: string;
+  setType: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const TypeSelector = ({ 
+  type, 
+  setType,
+}: TypeSelectorProps): React.ReactElement => {
   const classes = useStyles({});
-  const handleTypeChange = (e) => {
-    setType(e.target.value)
+  const handleTypeChange = (e: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>) => {
+    if (typeof e.target.value === 'string')
+      setType(e.target.value)
   };
 
   return(

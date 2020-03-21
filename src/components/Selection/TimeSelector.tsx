@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { ReactSVG } from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import useStyles from './selection_styles';
 
-const TimeSelector = ({ time, setTime }) => {
+interface TimeSelectorProps {
+  time: string;
+  setTime: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const TimeSelector = ({ time, setTime }: TimeSelectorProps): React.ReactElement => {
   const classes = useStyles({});
-  const handleTimeChange = (e) => {
-    setTime(e.target.value)
+  const handleTimeChange = (e: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>) => {
+    if (typeof e.target.value === 'string')
+      setTime(e.target.value)
   };
 
   return(
