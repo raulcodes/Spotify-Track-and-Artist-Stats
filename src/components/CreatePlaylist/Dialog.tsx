@@ -45,7 +45,7 @@ const PlaylistDialog = ({
       <Button onClick={handleClose} color="primary">
         Cancel
       </Button>
-      <Button onClick={() => createPlaylist(items, token, userId, dialogText)} color="primary">
+      <Button onClick={() => createPlaylist(items, token, userId, placeholderText)} color="primary">
         Create playlist
       </Button>
     </DialogActions>

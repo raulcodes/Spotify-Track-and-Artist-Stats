@@ -11,7 +11,7 @@ interface CreatePlaylistProps {
   userId: string;
 }
 
-const CreatePlaylist = ({ items, limit, time, userId }: CreatePlaylistProps) => {
+const CreatePlaylist = ({ items, limit, time, token, userId }: CreatePlaylistProps) => {
   const [open, setOpen] = React.useState(false);
   const timeText = () => {
     switch (time) {
