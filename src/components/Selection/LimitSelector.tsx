@@ -3,10 +3,19 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import useStyles from './selection_styles';
 
-const LimitSelector = ({ limit, setLimit }) => {
+interface LimitSelectorProps {
+  limit: number;
+  setLimit: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const LimitSelector = ({ 
+  limit, 
+  setLimit,
+}: LimitSelectorProps): React.ReactElement => {
   const classes = useStyles({});
-  const handleLimitChange = (e) => {
-    setLimit(e.target.value)
+  const handleLimitChange = (e: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>): void => {
+    if (typeof e.target.value === 'number')
+      setLimit(e.target.value)
   };
 
   return(

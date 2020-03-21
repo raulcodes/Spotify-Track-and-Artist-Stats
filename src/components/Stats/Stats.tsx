@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Container from '@material-ui/core/Container';
+import { useRouter } from 'next/router';
 
 import useStyles from './stats_styles';
 import CreatePlaylist from '../CreatePlaylist/CreatePlaylist';
@@ -15,13 +16,18 @@ const Stats = ({
   stats,
   token,
 }: StatsProps) => {
+  const router = useRouter();
   const { userData } = stats;
   const [items, setItems] = useState([] as Items);
   const [limit, setLimit] = useState(10);
   const [time, setTime] = useState('short');
   const [type, setType] = useState('tracks');
   useEffect(() => {
-    setItems(stats[type][time].slice(0, limit))
+    if (stats[type][time]) {
+      setItems(stats[type][time].slice(0, limit))
+    } else {
+      router.push('/');
+    }
   }, [limit, time, type]);
 
   const classes = useStyles();
