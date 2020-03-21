@@ -23,6 +23,16 @@ const theme = createMuiTheme({
         height: 70,
       },
     },
+    MuiDialog: {
+      paper: {
+        backgroundColor: colors.blue,
+      }
+    },
+    MuiDialogTitle: {
+      root: {
+        color: colors.white,
+      },
+    },
     MuiDivider: {
       root: {
         backgroundColor: colors.white,
@@ -40,6 +50,10 @@ const theme = createMuiTheme({
         fontFamily: 'alegreya',
         fontWeight: '700',
       },
+      h6: {
+        fontFamily: 'alegreya',
+        fontWeight: '700',
+      },
     },
     MuiButton: {
       outlinedSecondary: {
@@ -50,6 +64,10 @@ const theme = createMuiTheme({
         borderWidth: '1.5px',
         color: colors.white,
         borderColor: colors.white,
+        '&:hover': {
+          border: `1.5px solid ${colors.black}`,
+          color: colors.black,
+        },
       },
       label: {
         paddingLeft: '24px',
@@ -59,7 +77,23 @@ const theme = createMuiTheme({
     MuiSelect: {
       root: {
         color: colors.white,
-      }
+      },
+      icon: {
+        color: colors.white,
+      },
+    },
+    MuiInput: {
+      underline: {
+        '&:after': {
+          borderBottom: `2px solid ${colors.black}`,
+        },
+        '&:before': {
+          borderBottom: `1px solid ${colors.white}`,
+        },
+        '&:hover:not($disabled):before': {
+          borderBottom: `2px solid ${colors.white}`,
+        },
+      },
     }
   }
 });

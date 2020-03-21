@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import PlaylistDialog from './Dialog';
 import PlaylistButton from './Button';
+import useStyles from './playlist_styles';
 
 interface CreatePlaylistProps {
   items: Items;
@@ -12,6 +13,7 @@ interface CreatePlaylistProps {
 }
 
 const CreatePlaylist = ({ items, limit, time, token, userId }: CreatePlaylistProps) => {
+  const classes = useStyles({});
   const [open, setOpen] = React.useState(false);
   const timeText = () => {
     switch (time) {
@@ -24,7 +26,7 @@ const CreatePlaylist = ({ items, limit, time, token, userId }: CreatePlaylistPro
   const placeholderText = `Top ${limit} - past ${timeText()}`
 
   return(
-    <>
+    <div className={classes.container}>
       <PlaylistButton setOpen={setOpen} />
       <PlaylistDialog 
         open={open} 
@@ -35,7 +37,7 @@ const CreatePlaylist = ({ items, limit, time, token, userId }: CreatePlaylistPro
         token={token}
         userId={userId}
       />
-    </>
+    </div>
   )
 }
 
