@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
   card: {
     padding: '20px',
-    paddingTop: '170px',
+    paddingTop: '140px',
     maxWidth: '500px',
   },
   bodyText: {
