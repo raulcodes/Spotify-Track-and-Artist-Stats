@@ -20,7 +20,6 @@ const useStyles = makeStyles({
     paddingTop: '24px',
   },
   cardAction: {
-    marginTop: '30px',
     display: 'flex',
     justifyContent: 'center',
   },
@@ -38,7 +37,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     position: 'relative',
     marginTop: '10vh',
-    width: '30vh',
+    width: '25vh',
     '-webkit-animation': '$rotation 7s infinite linear',
     '-moz-animation': '$rotation 7s linear infinite',
     'animation': '$rotation 7s linear infinite',

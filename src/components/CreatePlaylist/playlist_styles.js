@@ -4,8 +4,6 @@ const useStyles = makeStyles({
   container: {
     display: 'flex',
     justifyContent: 'center',
-    paddingTop: '12px',
-    paddingBottom: '24px',
   },
 });
 

@@ -42,10 +42,14 @@ const PlaylistDialog = ({
       />
     </DialogContent>
     <DialogActions>
-      <Button onClick={handleClose} color="primary">
+      <Button onClick={handleClose} color="primary" >
         Cancel
       </Button>
-      <Button onClick={() => createPlaylist(items, token, userId, placeholderText)} color="primary">
+      <Button 
+        variant="outlined" 
+        color="secondary" 
+        onClick={() => createPlaylist(items, token, userId, placeholderText)} 
+      >
         Create playlist
       </Button>
     </DialogActions>
