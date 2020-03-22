@@ -60,15 +60,11 @@ declare interface Track {
 declare type Items = Array<Track | Artist>;
 
 interface TrackTimes {
-  [short: string]: Array<Track>;
-  [medium: string]: Array<Track>;
-  [long: string]: Array<Track>;
+  [key: string]: Array<Track>;
 }
 
 interface ArtistTimes {
-  [short: string]: Array<Artist>;
-  [medium: string]: Array<Artist>;
-  [long: string]: Array<Artist>;
+  [key: string]: Array<Artist>;
 }
 
 interface Followers {
