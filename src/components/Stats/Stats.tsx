@@ -3,18 +3,22 @@ import Container from '@material-ui/core/Container';
 import { useRouter } from 'next/router';
 
 import useStyles from './stats_styles';
+import CreatePlaylist from '../CreatePlaylist/CreatePlaylist';
 import TrackList from '../TrackList/TrackList';
 import Selection from '../Selection/Selection';
 
 interface StatsProps {
   stats: Stats;
+  token: string;
 }
 
 const Stats = ({
   stats,
+  token,
 }: StatsProps) => {
   const router = useRouter();
-  const [items, setItems] = useState([] as Array<Track | Artist>);
+  const { userData } = stats;
+  const [items, setItems] = useState([] as Items);
   const [limit, setLimit] = useState(10);
   const [time, setTime] = useState('short');
   const [type, setType] = useState('tracks');
@@ -37,8 +41,21 @@ const Stats = ({
           setLimit={setLimit}
           setTime={setTime}
           setType={setType}
-          userName={stats.userName}
+          userName={userData.display_name}
         />
+        {
+          type === 'tracks'
+          ? 
+          <CreatePlaylist
+            items={items} 
+            limit={limit}
+            time={time}
+            token={token}
+            userId={userData.id}
+          />
+          :
+          null
+        }
         <TrackList items={items} />
       </div> 
     </Container>

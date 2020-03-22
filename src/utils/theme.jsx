@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme, fade } from '@material-ui/core/styles'
 import colors from './colors';
 
 const theme = createMuiTheme({
@@ -7,7 +7,7 @@ const theme = createMuiTheme({
       main: colors.white,
     },
     secondary: {
-      main: colors.black,
+      main: fade(colors.black, .7),
     },
   },
   typography: {
@@ -21,6 +21,16 @@ const theme = createMuiTheme({
       root: {
         width: 70,
         height: 70,
+      },
+    },
+    MuiDialog: {
+      paper: {
+        backgroundColor: colors.blue,
+      }
+    },
+    MuiDialogTitle: {
+      root: {
+        color: colors.white,
       },
     },
     MuiDivider: {
@@ -40,26 +50,54 @@ const theme = createMuiTheme({
         fontFamily: 'alegreya',
         fontWeight: '700',
       },
-    },
-    MuiButton: {
-      outlinedSecondary: {
+      h6: {
         fontFamily: 'alegreya',
         fontWeight: '700',
-        fontStyle: 'italic',
-        textTransform: 'none',
-        borderWidth: '1.5px',
-        color: colors.white,
-        borderColor: colors.white,
       },
-      label: {
-        paddingLeft: '24px',
-        paddingRight: '24px'
+    },
+    MuiButton: {
+      root: {
+        color: colors.white,
+        fontFamily: 'alegreya',
+        fontWeight: '700',
+        textTransform: 'none',
+        '&:hover': {
+          textDecoration: 'none',
+          backgroundColor: fade(colors.white, 1),
+        },
+      },
+      outlinedSecondary: {
+        color: colors.white,
+        borderWidth: '1.5px',
+        borderColor: colors.white,
+        '&:hover': {
+          border: `1.5px solid ${fade(colors.black, .7)}`,
+          color: fade(colors.black, .7),
+        },
+        marginTop: '18px',
+        marginBottom: '18px',
       },
     },
     MuiSelect: {
       root: {
         color: colors.white,
-      }
+      },
+      icon: {
+        color: colors.white,
+      },
+    },
+    MuiInput: {
+      underline: {
+        '&:after': {
+          borderBottom: `2px solid ${fade(colors.black, .7)}`,
+        },
+        '&:before': {
+          borderBottom: `1px solid ${colors.white}`,
+        },
+        '&:hover:not($disabled):before': {
+          borderBottom: `2px solid ${colors.white}`,
+        },
+      },
     }
   }
 });

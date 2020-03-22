@@ -2,18 +2,15 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   selectCard: {
-    paddingTop: '24px',
-    paddingBottom: '24px',
+    paddingTop: '18px',
   },
   selectors: {
-    fontFamily: 'zeitung',
     textAlign: 'center',
     display: 'flex',
-    paddingTop: '5px',
-    paddingBottom: '5px',
+    paddingTop: '4px',
+    paddingBottom: '8px',
   },
   select: {
-    fontFamily: 'zeitung',
     fontSize: '.875em',
     marginRight: '5px',
     marginTop: '0px',

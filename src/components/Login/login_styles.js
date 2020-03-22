@@ -13,14 +13,13 @@ const useStyles = makeStyles({
   },
   card: {
     padding: '20px',
-    paddingTop: '170px',
+    paddingTop: '140px',
     maxWidth: '500px',
   },
   bodyText: {
     paddingTop: '24px',
   },
   cardAction: {
-    marginTop: '30px',
     display: 'flex',
     justifyContent: 'center',
   },
@@ -33,32 +32,8 @@ const useStyles = makeStyles({
   iconContainer: {
     display: 'flex',
     justifyContent: 'center',
-  },
-  icon: {
-    justifyContent: 'center',
-    position: 'relative',
     marginTop: '10vh',
-    width: '30vh',
-    '-webkit-animation': '$rotation 7s infinite linear',
-    '-moz-animation': '$rotation 7s linear infinite',
-    'animation': '$rotation 7s linear infinite',
   },
-  '@-moz-keyframes rotation': { 
-    '100%': { 
-      '-moz-transform': 'rotate(360deg)', 
-    } 
-  },
-  '@-webkit-keyframes rotation': { 
-    '100%': { 
-      '-webkit-transform': 'rotate(360deg)'
-    } 
-  },
-  '@keyframes rotation': { 
-    '100%': { 
-      '-webkit-transform': 'rotate(360deg)', 
-      'transform': 'rotate(360deg)' 
-    } 
-  }
 });
 
 export default useStyles;

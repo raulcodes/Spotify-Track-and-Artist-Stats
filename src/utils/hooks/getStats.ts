@@ -9,14 +9,13 @@ const getStats = (type: string, time_range: string, token: string): Promise<Resp
   .then(response => response.json())
   .then(resp => resp.items);
 
-const getUserName = (token: string): Promise<Response> => 
+const getUserData = (token: string): Promise<Response> => 
   fetch('https://api.spotify.com/v1/me', {
     headers: {
       'Authorization': `Bearer ${token}`
     }
   })
   .then(response => response.json())
-  .then(resp => resp.display_name);
 
 const getAllStats = async (token: string) => ({
   tracks: {
@@ -29,7 +28,7 @@ const getAllStats = async (token: string) => ({
     medium: await getStats('artists', 'medium_term', token),
     long: await getStats('artists', 'long_term', token),
   },
-  userName: await getUserName(token),
+  userData: await getUserData(token),
 });
 
 export default getAllStats;
