@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -35,7 +37,7 @@ const Login = () => {
           </Button>
         </div>
         <div className={classes.iconContainer}>
-          <RecordIcon className={classes.icon} />
+          <RecordIcon width={25} />
         </div>
       </div>
     </Container>
