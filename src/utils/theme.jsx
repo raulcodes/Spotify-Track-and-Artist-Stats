@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme, fade } from '@material-ui/core/styles'
 import colors from './colors';
 
 const theme = createMuiTheme({
@@ -7,7 +7,7 @@ const theme = createMuiTheme({
       main: colors.white,
     },
     secondary: {
-      main: colors.black,
+      main: fade(colors.black, .7),
     },
   },
   typography: {
@@ -56,22 +56,26 @@ const theme = createMuiTheme({
       },
     },
     MuiButton: {
-      outlinedSecondary: {
+      root: {
+        color: colors.white,
         fontFamily: 'alegreya',
         fontWeight: '700',
-        fontStyle: 'italic',
         textTransform: 'none',
-        borderWidth: '1.5px',
-        color: colors.white,
-        borderColor: colors.white,
         '&:hover': {
-          border: `1.5px solid ${colors.black}`,
-          color: colors.black,
+          textDecoration: 'none',
+          backgroundColor: fade(colors.white, 1),
         },
       },
-      label: {
-        paddingLeft: '24px',
-        paddingRight: '24px'
+      outlinedSecondary: {
+        color: colors.white,
+        borderWidth: '1.5px',
+        borderColor: colors.white,
+        '&:hover': {
+          border: `1.5px solid ${fade(colors.black, .7)}`,
+          color: fade(colors.black, .7),
+        },
+        marginTop: '18px',
+        marginBottom: '18px',
       },
     },
     MuiSelect: {
@@ -85,7 +89,7 @@ const theme = createMuiTheme({
     MuiInput: {
       underline: {
         '&:after': {
-          borderBottom: `2px solid ${colors.black}`,
+          borderBottom: `2px solid ${fade(colors.black, .7)}`,
         },
         '&:before': {
           borderBottom: `1px solid ${colors.white}`,
