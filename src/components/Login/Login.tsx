@@ -37,7 +37,7 @@ const Login = () => {
           </Button>
         </div>
         <div className={classes.iconContainer}>
-          <RecordIcon className={classes.icon} />
+          <RecordIcon width={25} />
         </div>
       </div>
     </Container>
