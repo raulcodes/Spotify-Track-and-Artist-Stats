@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   listContainer: {
     border: `1.5px solid ${colors.white}`,
     borderRadius: '5px',
-    maxHeight: '60vh',
+    maxHeight: '55vh',
     overflowY: 'scroll',
   }
 });
