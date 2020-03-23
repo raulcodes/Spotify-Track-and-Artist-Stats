@@ -1,6 +1,24 @@
 import fetch from 'isomorphic-unfetch';
 
-const createPlaylist = (items: Items, token: string, userId: string, playlistName: string) => {
+interface playlistHookProps {
+  items: Items;
+  token: string;
+  userId: string;
+  playlistName: string;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setSnackbar: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const useCreatePlaylist = ({
+  items,
+  token,
+  userId,
+  playlistName,
+  setLoading,
+  setOpen,
+  setSnackbar,
+}: playlistHookProps) => {
   const trackIds = items.map(i => i.uri);
     
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
@@ -15,10 +33,9 @@ const createPlaylist = (items: Items, token: string, userId: string, playlistNam
   })
   .then(response => {       
     if(response.ok) {
-      console.log('Created empty playlist')
       return response.json()
     }
-      throw new Error('Error creating playlist');
+    throw new Error('Error creating a playlist');
   })
   .then(response => response.id)
   .then(playlistId => 
@@ -33,14 +50,19 @@ const createPlaylist = (items: Items, token: string, userId: string, playlistNam
     })
     .then(response => {       
       if(response.ok) {
-        return response.json()
+        setTimeout(() => {
+          setLoading(false);
+          setOpen(false);
+          setSnackbar('success');
+        }, 2000);
+        return response.json();
       }
       throw new Error('Error adding tracks to playlist');
     })
-    .catch(error => {
-      console.log('Encountered problems making a playlist:', error.message)
+    .catch(() => {
+      setSnackbar('error');
     })
   );
 };
 
-export default createPlaylist;
+export default useCreatePlaylist;

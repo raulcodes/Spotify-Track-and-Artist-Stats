@@ -8,11 +8,12 @@ interface CreatePlaylistProps {
   items: Items;
   limit: number;
   time: string;
+  setSnackbar: React.Dispatch<React.SetStateAction<string>>;
   token: string;
   userId: string;
 }
 
-const CreatePlaylist = ({ items, limit, time, token, userId }: CreatePlaylistProps) => {
+const CreatePlaylist = ({ items, limit, time, setSnackbar, token, userId }: CreatePlaylistProps) => {
   const classes = useStyles({});
   const [open, setOpen] = React.useState(false);
   const timeText = () => {
@@ -34,6 +35,8 @@ const CreatePlaylist = ({ items, limit, time, token, userId }: CreatePlaylistPro
         items={items}
         dialogText={dialogText}
         placeholderText={placeholderText}
+        setOpen={setOpen}
+        setSnackbar={setSnackbar}
         token={token}
         userId={userId}
       />

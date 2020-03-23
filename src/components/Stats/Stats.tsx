@@ -3,6 +3,8 @@ import Container from '@material-ui/core/Container';
 import { useRouter } from 'next/router';
 
 import useStyles from './stats_styles';
+import Alert from '@material-ui/lab/Alert';
+import Snackbar from '@material-ui/core/Snackbar';
 import CreatePlaylist from '../CreatePlaylist/CreatePlaylist';
 import TrackList from '../TrackList/TrackList';
 import Selection from '../Selection/Selection';
@@ -30,6 +32,8 @@ const Stats = ({
     }
   }, [limit, time, type]);
 
+  const [snackbar, setSnackbar] = React.useState('');
+
   const classes = useStyles();
   return(
     <Container className={classes.container}>
@@ -50,6 +54,7 @@ const Stats = ({
             items={items} 
             limit={limit}
             time={time}
+            setSnackbar={setSnackbar}
             token={token}
             userId={userData.id}
           />
@@ -58,6 +63,16 @@ const Stats = ({
         }
         <TrackList items={items} />
       </div> 
+      <Snackbar open={snackbar === 'success'} autoHideDuration={6000} onClose={() => setSnackbar('')}>
+        <Alert onClose={() => setSnackbar('')} severity="success">
+          Playlist created successfully!
+        </Alert>
+      </Snackbar>
+      <Snackbar open={snackbar === 'error'} autoHideDuration={6000} onClose={() => setSnackbar('')}>
+        <Alert onClose={() => setSnackbar('')} severity="error">
+          Ran into an unexpected error! Try again later.
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }
