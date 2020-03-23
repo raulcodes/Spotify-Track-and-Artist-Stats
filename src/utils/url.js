@@ -6,6 +6,7 @@ const authURL = () => {
     'redirect_uri': 'https://spotify-track-and-artist-stats.now.sh/callback',
     // 'redirect_uri': 'http://localhost:3000/callback',
     'response_type': 'token',
+    'scope': 'user-top-read user-read-email playlist-modify-public', 
     'state': code,
   };
   let urlParams = '';
