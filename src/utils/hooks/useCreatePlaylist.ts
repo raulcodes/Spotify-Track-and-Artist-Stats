@@ -19,50 +19,50 @@ const useCreatePlaylist = ({
   setOpen,
   setSnackbar,
 }: playlistHookProps) => {
-  const trackIds = items.map(i => i.uri);
-    
+  const trackIds = items.map((i) => i.uri);
+
   fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      'name': playlistName,
-    })
+      name: playlistName,
+    }),
   })
-  .then(response => {       
-    if(response.ok) {
-      return response.json()
-    }
-    throw new Error('Error creating a playlist');
-  })
-  .then(response => response.id)
-  .then(playlistId => 
-    // Add tracks to playlist
-    fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
-      method: 'POST',
-      headers: {
-          'Authorization': 'Bearer ' + token,
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ "uris": trackIds })
-    })
-    .then(response => {       
-      if(response.ok) {
-        setTimeout(() => {
-          setLoading(false);
-          setOpen(false);
-          setSnackbar('success');
-        }, 2000);
+    .then((response) => {
+      if (response.ok) {
         return response.json();
       }
-      throw new Error('Error adding tracks to playlist');
+      throw new Error('Error creating a playlist');
     })
-    .catch(() => {
-      setSnackbar('error');
-    })
-  );
+    .then((response) => response.id)
+    .then((playlistId) =>
+      // Add tracks to playlist
+      fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+        method: 'POST',
+        headers: {
+          Authorization: 'Bearer ' + token,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ uris: trackIds }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            setTimeout(() => {
+              setLoading(false);
+              setOpen(false);
+              setSnackbar('success');
+            }, 2000);
+            return response.json();
+          }
+          throw new Error('Error adding tracks to playlist');
+        })
+        .catch(() => {
+          setSnackbar('error');
+        })
+    );
 };
 
 export default useCreatePlaylist;

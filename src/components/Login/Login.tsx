@@ -12,27 +12,22 @@ import authURL from '../../utils/url';
 const Login = () => {
   React.useEffect(() => {
     document.body.style.overflow = 'hidden';
-  }, [])
-  
+  }, []);
+
   const classes = useStyles({});
 
-  return(
+  return (
     <Container className={classes.container}>
       <div className={classes.card}>
         <div>
-          <Typography variant="h4">
-            Spotify Stats
-          </Typography>
+          <Typography variant="h4">Spotify Stats</Typography>
           <Typography variant="body1" className={classes.bodyText}>
-            Discover what your top listened to tracks and artists are and turn them into playlists!
+            Discover what your top listened to tracks and artists are and turn
+            them into playlists!
           </Typography>
         </div>
         <div className={classes.cardAction}>
-          <Button 
-            variant="outlined" 
-            color="secondary" 
-            href={authURL()}
-          >
+          <Button variant="outlined" color="secondary" href={authURL()}>
             Log In to Spotify
           </Button>
         </div>

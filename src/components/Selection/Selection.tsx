@@ -16,22 +16,20 @@ interface SelectionProps {
   userName: string;
 }
 
-const Selection = ({ 
-  limit, 
-  time, 
+const Selection = ({
+  limit,
+  time,
   type,
-  setLimit, 
-  setTime, 
-  setType, 
+  setLimit,
+  setTime,
+  setType,
   userName,
 }: SelectionProps): React.ReactElement => {
   const classes = useStyles({});
 
-  return(
+  return (
     <div className={classes.selectCard}>
-      <Typography variant="h4">
-        Hello, {userName}!
-      </Typography>
+      <Typography variant="h4">Hello, {userName}!</Typography>
       <div className={classes.selectionPrompt}>
         <Typography variant="body2">Here are your top</Typography>
         <div className={classes.selectors}>

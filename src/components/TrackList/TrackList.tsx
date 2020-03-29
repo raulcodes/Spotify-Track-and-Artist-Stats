@@ -13,9 +13,9 @@ const TrackList = ({ items }: TrackListProps) => {
   return (
     <div className={classes.listContainer}>
       <List>
-        {items.map((item, rank) => 
+        {items.map((item, rank) => (
           <TrackItem key={rank} rank={rank} item={item} />
-        )}
+        ))}
       </List>
     </div>
   );

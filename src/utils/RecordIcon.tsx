@@ -7,30 +7,30 @@ interface RecordIconProps {
 }
 
 const useStyles = makeStyles({
-  '@keyframes rotation': { 
-    '100%': { 
-      '-webkit-transform': 'rotate(360deg)', 
-      'transform': 'rotate(360deg)' 
-    }, 
+  '@keyframes rotation': {
+    '100%': {
+      '-webkit-transform': 'rotate(360deg)',
+      transform: 'rotate(360deg)',
+    },
   },
   record: {
     position: 'relative',
     width: (props: RecordIconProps) => `${props.width}vh`,
     '-webkit-animation': '$rotation 7s infinite linear',
     '-moz-animation': '$rotation 7s linear infinite',
-    'animation': '$rotation 7s linear infinite',
+    animation: '$rotation 7s linear infinite',
   },
 });
 
 const RecordIcon = ({ width, ...props }: RecordIconProps) => {
   const classes = useStyles({ width });
-  return ( 
+  return (
     <div className={classes.record}>
       <svg viewBox="0 0 96 96" {...props}>
         <defs>
           <style>{`.prefix__cls-1{fill:${colors.white}}`}</style>
         </defs>
-        <title>{"Record Icon"}</title>
+        <title>{'Record Icon'}</title>
         <g id="prefix__Layer_2" data-name="Layer 2">
           <g id="prefix__Layer_1-2" data-name="Layer 1">
             <path
@@ -45,4 +45,4 @@ const RecordIcon = ({ width, ...props }: RecordIconProps) => {
   );
 };
 
-export default RecordIcon
+export default RecordIcon;

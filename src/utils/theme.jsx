@@ -1,4 +1,4 @@
-import { createMuiTheme, fade } from '@material-ui/core/styles'
+import { createMuiTheme, fade } from '@material-ui/core/styles';
 import colors from './colors';
 
 const theme = createMuiTheme({
@@ -7,14 +7,11 @@ const theme = createMuiTheme({
       main: colors.white,
     },
     secondary: {
-      main: fade(colors.black, .7),
+      main: fade(colors.black, 0.7),
     },
   },
   typography: {
-    fontFamily: [
-      'zeitung',
-      'serif'
-    ].join(','),
+    fontFamily: ['zeitung', 'serif'].join(','),
   },
   overrides: {
     MuiAvatar: {
@@ -26,7 +23,7 @@ const theme = createMuiTheme({
     MuiDialog: {
       paper: {
         backgroundColor: colors.blue,
-      }
+      },
     },
     MuiDialogTitle: {
       root: {
@@ -36,7 +33,7 @@ const theme = createMuiTheme({
     MuiDivider: {
       root: {
         backgroundColor: colors.white,
-      }
+      },
     },
     MuiTypography: {
       body1: {
@@ -71,8 +68,8 @@ const theme = createMuiTheme({
         borderWidth: '1.5px',
         borderColor: colors.white,
         '&:hover': {
-          border: `1.5px solid ${fade(colors.black, .7)}`,
-          color: fade(colors.black, .7),
+          border: `1.5px solid ${fade(colors.black, 0.7)}`,
+          color: fade(colors.black, 0.7),
         },
         marginTop: '18px',
         marginBottom: '18px',
@@ -89,7 +86,7 @@ const theme = createMuiTheme({
     MuiInput: {
       underline: {
         '&:after': {
-          borderBottom: `2px solid ${fade(colors.black, .7)}`,
+          borderBottom: `2px solid ${fade(colors.black, 0.7)}`,
         },
         '&:before': {
           borderBottom: `1px solid ${colors.white}`,
@@ -98,8 +95,8 @@ const theme = createMuiTheme({
           borderBottom: `2px solid ${colors.white}`,
         },
       },
-    }
-  }
+    },
+  },
 });
 
 export default theme;

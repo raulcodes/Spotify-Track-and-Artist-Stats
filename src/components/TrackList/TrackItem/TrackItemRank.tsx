@@ -12,7 +12,9 @@ const TrackItemRank = ({ rank }: TrackItemRankProps) => {
   const classes = useStyles({});
   return (
     <ListItemAvatar className={classes.number}>
-      <Typography variant="h4">{(rank < 9) ? `0${rank+1}` : `${rank+1}`}</Typography>
+      <Typography variant="h4">
+        {rank < 9 ? `0${rank + 1}` : `${rank + 1}`}
+      </Typography>
     </ListItemAvatar>
   );
 };

@@ -14,10 +14,7 @@ interface StatsProps {
   token: string;
 }
 
-const Stats = ({
-  stats,
-  token,
-}: StatsProps) => {
+const Stats = ({ stats, token }: StatsProps) => {
   const router = useRouter();
   const { userData } = stats;
   const [items, setItems] = useState([] as Items);
@@ -26,7 +23,7 @@ const Stats = ({
   const [type, setType] = useState('tracks');
   useEffect(() => {
     if (stats[type][time]) {
-      setItems(stats[type][time].slice(0, limit))
+      setItems(stats[type][time].slice(0, limit));
     } else {
       router.push('/');
     }
@@ -35,7 +32,7 @@ const Stats = ({
   const [snackbar, setSnackbar] = React.useState('');
 
   const classes = useStyles();
-  return(
+  return (
     <Container className={classes.container}>
       <div className={classes.card}>
         <Selection
@@ -47,34 +44,38 @@ const Stats = ({
           setType={setType}
           userName={userData.display_name}
         />
-        {
-          type === 'tracks'
-          ? 
+        {type === 'tracks' ? (
           <CreatePlaylist
-            items={items} 
+            items={items}
             limit={limit}
             time={time}
             setSnackbar={setSnackbar}
             token={token}
             userId={userData.id}
           />
-          :
-          null
-        }
+        ) : null}
         <TrackList items={items} />
-      </div> 
-      <Snackbar open={snackbar === 'success'} autoHideDuration={6000} onClose={() => setSnackbar('')}>
+      </div>
+      <Snackbar
+        open={snackbar === 'success'}
+        autoHideDuration={6000}
+        onClose={() => setSnackbar('')}
+      >
         <Alert onClose={() => setSnackbar('')} severity="success">
           Playlist created successfully!
         </Alert>
       </Snackbar>
-      <Snackbar open={snackbar === 'error'} autoHideDuration={6000} onClose={() => setSnackbar('')}>
+      <Snackbar
+        open={snackbar === 'error'}
+        autoHideDuration={6000}
+        onClose={() => setSnackbar('')}
+      >
         <Alert onClose={() => setSnackbar('')} severity="error">
           Ran into an unexpected error! Try again later.
         </Alert>
       </Snackbar>
     </Container>
   );
-}
+};
 
-export default Stats
+export default Stats;

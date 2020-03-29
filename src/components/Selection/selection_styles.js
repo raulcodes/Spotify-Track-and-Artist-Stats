@@ -15,11 +15,10 @@ const useStyles = makeStyles({
     marginRight: '5px',
     marginTop: '0px',
     marginBottom: '0px',
-
   },
   selectionPrompt: {
-    paddingTop: '24px'
-  }
+    paddingTop: '24px',
+  },
 });
 
 export default useStyles;

@@ -22,7 +22,7 @@ const TrackItem = ({ rank, item }: TrackItemProps) => {
       </ListItem>
       <Divider className={classes.divider} variant="middle" />
     </>
-  )
-}
+  );
+};
 
 export default TrackItem;

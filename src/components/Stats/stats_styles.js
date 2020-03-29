@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   card: {
     paddingTop: '5vh',
     maxHeight: '20vh',
-  }
+  },
 });
 
 export default useStyles;

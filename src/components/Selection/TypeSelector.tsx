@@ -8,22 +8,19 @@ interface TypeSelectorProps {
   setType: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const TypeSelector = ({ 
-  type, 
+const TypeSelector = ({
+  type,
   setType,
 }: TypeSelectorProps): React.ReactElement => {
   const classes = useStyles({});
-  const handleTypeChange = (e: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>) => {
-    if (typeof e.target.value === 'string')
-      setType(e.target.value)
+  const handleTypeChange = (
+    e: React.ChangeEvent<{ name?: string | undefined; value: unknown }>
+  ) => {
+    if (typeof e.target.value === 'string') setType(e.target.value);
   };
 
-  return(
-    <Select 
-      className={classes.select}
-      value={type}
-      onChange={handleTypeChange}
-    >
+  return (
+    <Select className={classes.select} value={type} onChange={handleTypeChange}>
       <MenuItem value="tracks">tracks</MenuItem>
       <MenuItem value="artists">artists</MenuItem>
     </Select>

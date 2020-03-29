@@ -8,18 +8,19 @@ interface LimitSelectorProps {
   setLimit: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const LimitSelector = ({ 
-  limit, 
+const LimitSelector = ({
+  limit,
   setLimit,
 }: LimitSelectorProps): React.ReactElement => {
   const classes = useStyles({});
-  const handleLimitChange = (e: React.ChangeEvent<{ name?: string | undefined; value: unknown; }>): void => {
-    if (typeof e.target.value === 'number')
-      setLimit(e.target.value)
+  const handleLimitChange = (
+    e: React.ChangeEvent<{ name?: string | undefined; value: unknown }>
+  ): void => {
+    if (typeof e.target.value === 'number') setLimit(e.target.value);
   };
 
-  return(
-    <Select 
+  return (
+    <Select
       className={classes.select}
       value={limit}
       onChange={handleLimitChange}

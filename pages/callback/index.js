@@ -13,31 +13,31 @@ const Authorize = () => {
   Router.onRouteChangeComplete = () => {
     NProgress.done();
   };
-  
+
   Router.onRouteChangeError = () => {
     NProgress.done();
   };
 
   const getHashValue = (key) => {
-    var matches = location.hash.match(new RegExp(key+'=([^&]*)'));
+    var matches = location.hash.match(new RegExp(key + '=([^&]*)'));
     return matches ? matches[1] : null;
-  }
+  };
 
-  useEffect(() => {        
-    const accessToken = getHashValue('access_token')
+  useEffect(() => {
+    const accessToken = getHashValue('access_token');
     if (accessToken && getHashValue('state') === expectedState) {
-      router.replace({ 
-        pathname: '/stats', 
-        query: { 
+      router.replace({
+        pathname: '/stats',
+        query: {
           accessToken: accessToken,
-        }
+        },
       });
     } else {
       router.push('/');
     }
-  }, [])
+  }, []);
 
   return null;
-}
+};
 
-export default Authorize
+export default Authorize;

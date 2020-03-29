@@ -23,11 +23,11 @@ interface PlaylistDialogProps {
   userId: string;
 }
 
-const PlaylistDialog = ({ 
-  dialogText, 
-  items, 
-  open, 
-  handleClose, 
+const PlaylistDialog = ({
+  dialogText,
+  items,
+  open,
+  handleClose,
   placeholderText,
   setOpen,
   setSnackbar,
@@ -40,25 +40,23 @@ const PlaylistDialog = ({
   const handleCreate = () => {
     setLoading(true);
     useCreatePlaylist({
-      items, 
-      token, 
-      userId, 
-      playlistName: placeholderText, 
+      items,
+      token,
+      userId,
+      playlistName: placeholderText,
       setLoading,
       setOpen,
       setSnackbar,
     });
-  }
+  };
 
-  return(
+  return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle>{dialogText}</DialogTitle>
       <DialogContent className={classes.content}>
-        {
-          loading
-          ? 
-          <RecordIcon width={7}/>
-          :
+        {loading ? (
+          <RecordIcon width={7} />
+        ) : (
           <TextField
             autoFocus
             margin="dense"
@@ -68,16 +66,16 @@ const PlaylistDialog = ({
             fullWidth
             placeholder={placeholderText}
           />
-        }
+        )}
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose} color="primary" >
+        <Button onClick={handleClose} color="primary">
           Cancel
         </Button>
-        <Button 
-          variant="outlined" 
-          color="secondary" 
-          onClick={() => handleCreate()} 
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={() => handleCreate()}
         >
           Create playlist
         </Button>

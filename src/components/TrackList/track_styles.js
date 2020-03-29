@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     borderRadius: '5px',
     maxHeight: '55vh',
     overflowY: 'scroll',
-  }
+  },
 });
 
 export default useStyles;

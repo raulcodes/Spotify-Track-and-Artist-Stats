@@ -13,25 +13,35 @@ interface CreatePlaylistProps {
   userId: string;
 }
 
-const CreatePlaylist = ({ items, limit, time, setSnackbar, token, userId }: CreatePlaylistProps) => {
+const CreatePlaylist = ({
+  items,
+  limit,
+  time,
+  setSnackbar,
+  token,
+  userId,
+}: CreatePlaylistProps) => {
   const classes = useStyles({});
   const [open, setOpen] = React.useState(false);
   const timeText = () => {
     switch (time) {
-      case 'short': return '4 weeks';
-      case 'medium': return '6 months';
-      case 'long': return 'couple of years';
+      case 'short':
+        return '4 weeks';
+      case 'medium':
+        return '6 months';
+      case 'long':
+        return 'couple of years';
     }
-  }
-  const dialogText = `Make a playlist of your top ${limit} tracks for the past ${timeText()}`
-  const placeholderText = `Top ${limit} - past ${timeText()}`
+  };
+  const dialogText = `Make a playlist of your top ${limit} tracks for the past ${timeText()}`;
+  const placeholderText = `Top ${limit} - past ${timeText()}`;
 
-  return(
+  return (
     <div className={classes.container}>
       <PlaylistButton setOpen={setOpen} />
-      <PlaylistDialog 
-        open={open} 
-        handleClose={() => setOpen(open => !open)} 
+      <PlaylistDialog
+        open={open}
+        handleClose={() => setOpen((open) => !open)}
         items={items}
         dialogText={dialogText}
         placeholderText={placeholderText}
@@ -41,7 +51,7 @@ const CreatePlaylist = ({ items, limit, time, setSnackbar, token, userId }: Crea
         userId={userId}
       />
     </div>
-  )
-}
+  );
+};
 
 export default CreatePlaylist;

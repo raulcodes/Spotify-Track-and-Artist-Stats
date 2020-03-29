@@ -20,16 +20,24 @@ const TrackItemContent = ({ data }: TrackItemContentProps) => {
     return (
       <>
         <ListItemAvatar>
-          <Avatar className={classes.avatar} variant="square" src={album.images[0].url} alt={name} />
-        </ListItemAvatar>     
+          <Avatar
+            className={classes.avatar}
+            variant="square"
+            src={album.images[0].url}
+            alt={name}
+          />
+        </ListItemAvatar>
         <ListItemText
-          primary={`${name.slice(0,35)}${name.length > 35 ? '...' : ''}`} 
+          primary={`${name.slice(0, 35)}${name.length > 35 ? '...' : ''}`}
           primaryTypographyProps={{ variant: 'body2' }}
-          secondary={artists[0].name} 
-          secondaryTypographyProps={{ variant: 'subtitle1', classes: { root: classes.contentText } }}
+          secondary={artists[0].name}
+          secondaryTypographyProps={{
+            variant: 'subtitle1',
+            classes: { root: classes.contentText },
+          }}
         />
       </>
-    )
+    );
   } else {
     const { name, images } = data;
     return (
@@ -40,8 +48,7 @@ const TrackItemContent = ({ data }: TrackItemContentProps) => {
         <ListItemText primary={name} />
       </>
     );
-
   }
-}
+};
 
 export default TrackItemContent;
