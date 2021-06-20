@@ -36,6 +36,7 @@ const PlaylistDialog = ({
 }: PlaylistDialogProps) => {
   const classes = useStyles({});
   const [loading, setLoading] = React.useState(false);
+  const [playlistName, setPlaylistName] = React.useState("");
 
   const handleCreate = () => {
     setLoading(true);
@@ -43,7 +44,7 @@ const PlaylistDialog = ({
       items,
       token,
       userId,
-      playlistName: placeholderText,
+      playlistName,
       setLoading,
       setOpen,
       setSnackbar,
@@ -65,6 +66,8 @@ const PlaylistDialog = ({
             type="text"
             fullWidth
             placeholder={placeholderText}
+            value={playlistName}
+            onChange={(e) => setPlaylistName(e.target.value)}
           />
         )}
       </DialogContent>
