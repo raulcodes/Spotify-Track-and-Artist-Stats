@@ -10,10 +10,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-          />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <script src="nprogress.js"></script>
           <link rel="stylesheet" href="https://use.typekit.net/saw2rwz.css" />

@@ -1,4 +1,5 @@
 import { createMuiTheme, fade } from '@material-ui/core/styles';
+
 import colors from './colors';
 
 const theme = createMuiTheme({
@@ -38,25 +39,25 @@ const theme = createMuiTheme({
     MuiTypography: {
       body1: {
         fontStyle: 'italic',
-        fontWeight: '600',
+        fontWeight: 600,
       },
       body2: {
         fontStyle: 'italic',
       },
       h4: {
         fontFamily: 'alegreya',
-        fontWeight: '700',
+        fontWeight: 700,
       },
       h6: {
         fontFamily: 'alegreya',
-        fontWeight: '700',
+        fontWeight: 700,
       },
     },
     MuiButton: {
       root: {
         color: colors.white,
         fontFamily: 'alegreya',
-        fontWeight: '700',
+        fontWeight: 700,
         textTransform: 'none',
         '&:hover': {
           textDecoration: 'none',
